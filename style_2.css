@@ -1,0 +1,18 @@
+h2,
+td {
+    font-weight: bold;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+}
+
+.head {
+    text-align: center;
+    float: left;
+    color: white;
+    background-color: cornflowerblue;
+    width: 200px;
+    height: 700px;
+}
