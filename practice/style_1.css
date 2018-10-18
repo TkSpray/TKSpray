@@ -1,0 +1,10 @@
+h1,
+h2,
+td {
+    font-weight: bold;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+}

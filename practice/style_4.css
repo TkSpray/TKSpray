@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    vertical-align: bottom;
+    display: block
+}
+
+html {
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.first {
+    height: 100px;
+    background-color: rgb(80, 78, 78);
+}
+
+.first img {
+    width: 500px;
+    height: 100px;
+}
+
+.firstul {
+    right: 0;
+    top: 10px;
+    position: absolute;
+}
+
+.firstul li {
+    float: right;
+    list-style-type: none;
+    width: 75px;
+}
+
+.firstul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.se {
+    height: 400px;
+    background-color: rgb(107, 172, 11);
+    position: relative;
+}
+
+.se li {
+    left: 85%;
+    width: 20px;
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    margin: 4px;
+    bottom: -350px;
+    position: relative;
+}
+
+.se li a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid white;
+    padding: 5px 8px;
+    background-color: rgba(218, 214, 214, 0.747);
+}
+
+.se li a:focus,
+.se li a:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 15px 8px 5px 8px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.th {
+    background-color: white;
+    height: 60px;
+    border-bottom: 1px solid #c9c9c9;
+    position: relative;
+    top: 10px;
+    width: 95%;
+}
+
+.th div {
+    display: flex;
+    align-items: flex-end;
+    height: 60px;
+}
+
+.th div a {
+    border: 2px grey solid;
+    width: 100px;
+    background-color: rgba(218, 214, 214, 0.747);
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.th div a:link,
+.th div a:visited {
+    color: black
+}
+
+.th div a:focus,
+.th div a:hover {
+    background-color: white;
+    color: black;
+}
+
+.fo div {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin: 0;
+    top: 10px;
+    left: 5%;
+    width: 1400px;
+}
+
+.fo section {
+    border: 1px solid;
+    flex: 1;
+    text-align: center;
+    margin: 8px 8px 0 0;
+    line-height: 40px;
+    padding: 80px;
+}
+
+footer {
+    text-align: center;
+    height: 100px;
+    background-color: gray;
+    padding: 10px;
+    margin-top: 130px;
+    width: 1600px;
+}
