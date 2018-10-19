@@ -19,7 +19,7 @@ body>div {
     background: rgba(0, 0, 0, 0.6) url(https://sanshiliuxiao.top/IFE2018/zero/9_11/images/header.png);
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    height: 1000px;
+    height: 960px;
     color: white;
     font-weight: lighter;
 }
@@ -27,7 +27,6 @@ body>div {
 .sec1>div {
     margin: 0 auto;
     position: relative;
-    top: 100px;
 }
 
 .sec1-1 {
@@ -36,14 +35,32 @@ body>div {
     width: 960px;
     margin: 0 20% 0 20%;
     height: 300px;
+    position: relative;
+    top: 150px;
 }
 
 .sec1 h1 {
-    margin: 0 auto;
+    margin: 0px auto;
+    position: relative;
+    top: 130px;
+    font-size: 60px;
+    font-weight: lighter;
 }
 
-.sec1 p {
-    margin: 40px 0;
+#p1 {
+    margin: 60px 0;
+    position: relative;
+    top: 140px;
+    color: rgba(128, 128, 128, 0.89);
+}
+
+.sec1-1 p {
+    font-weight: lighter;
+    color: rgba(128, 128, 128, 0.89);
+}
+
+.sec1-1 h3 {
+    font-weight: lighter;
 }
 
 .sec1-1 div input {
