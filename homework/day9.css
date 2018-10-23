@@ -206,3 +206,99 @@ body>div {
     right: 0px;
     top: 100px;
 }
+
+.sec4 {
+    width: 1600px;
+    position: relative;
+    border-bottom: 1px rgba(207, 207, 207, 0.589) solid;
+    height: 450px;
+}
+
+.sec4 h2 {
+    font-weight: 350;
+    text-align: center;
+    font-size: 30px;
+    margin: 80px auto;
+}
+
+.sec4 div:nth-of-type(1) {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.sec4 div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.sec4 div:nth-of-type(2)>p {
+    width: 268px;
+    color: rgba(128, 128, 128, 0.89);
+    line-height: 25px;
+}
+
+.sec5 {
+    width: 1600px;
+    border-bottom: 1px rgba(207, 207, 207, 0.589) solid;
+}
+
+.sec5-1,
+.sec5-2 {
+    width: 1000px;
+    margin: 100px auto;
+}
+
+.sec5-1 div:nth-of-type(1) {
+    width: 350px;
+    float: right;
+}
+
+.sec5 h3 {
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.sec5 p {
+    color: rgba(128, 128, 128, 0.89);
+}
+
+.sec5-2 div:nth-of-type(1) {
+    width: 320px;
+    float: left;
+    margin-right: 70px;
+}
+
+.sec6 {
+    width: 1600px;
+}
+
+.sec6 h2 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.sec6 p {
+    width: 600px;
+    text-align: center;
+    font-weight: lighter;
+    color: rgba(128, 128, 128, 0.89);
+    margin: 0 auto;
+}
+
+.sec6 div:nth-of-type(2) {
+    margin: 30px auto 0 auto;
+    width: 900px;
+}
+
+.sec6 img {
+    width: 400px;
+    height: 300px;
+    margin: 10px 10px;
+}
