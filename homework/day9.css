@@ -36,13 +36,13 @@ body>div {
     margin: 0 20% 0 20%;
     height: 300px;
     position: relative;
-    top: 150px;
+    top: 180px;
 }
 
 .sec1 h1 {
     margin: 0px auto;
     position: relative;
-    top: 130px;
+    top: 160px;
     font-size: 60px;
     font-weight: lighter;
 }
@@ -50,13 +50,16 @@ body>div {
 #p1 {
     margin: 60px 0;
     position: relative;
-    top: 140px;
+    top: 170px;
     color: rgba(128, 128, 128, 0.89);
+    letter-spacing: 2px;
 }
 
 .sec1-1 p {
     font-weight: lighter;
     color: rgba(128, 128, 128, 0.89);
+    font-size: 3px;
+    letter-spacing: 2px;
 }
 
 .sec1-1 h3 {
@@ -76,4 +79,130 @@ body>div {
     height: 50px;
     background-color: white;
     border: solid 1px rgba(255, 255, 255, 0.4);
+}
+
+.sec2 {
+    height: 600px;
+    margin: 100px auto 0 auto;
+}
+
+.sec2 h3 {
+    font-weight: 400;
+    font-size: 23px;
+    text-align: center;
+}
+
+.sec2 h2 {
+    font-weight: 400;
+    font-size: 35px;
+    margin: 30px auto 50px auto;
+    text-align: center;
+}
+
+.sec2 div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1200px;
+    left: 300px;
+    position: relative;
+}
+
+.sec2 ul li {
+    width: 500px;
+    list-style-type: none;
+}
+
+.sec2 ul li:first-child {
+    font-size: 25px;
+}
+
+.sec2 ul li:last-child {
+    color: rgba(128, 128, 128, 0.89);
+    letter-spacing: 0.5px;
+    font-size: 15px;
+}
+
+.sec2 div ul {
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 60px;
+}
+
+.sec2 div ul:nth-child(1) {
+    background-image: url(http://a2.qpic.cn/psb?/V13qiDY61WZU8n/H0*VJxYtnmcH*VeXLdTh94no9ogdjSPUSlZMytGBxCs!/m/dDUBAAAAAAAAnull&bo=NgAxAAAAAAADByU!&rf=photolist&t=5)
+}
+
+.sec2 div ul:nth-child(2) {
+    background-image: url(http://a3.qpic.cn/psb?/V13qiDY61WZU8n/QfTLvNw8toD4QRT3zLLyE7yVDM2NcOM*12dZ3bC03wo!/m/dDIBAAAAAAAAnull&bo=MgAxAAAAAAADByE!&rf=photolist&t=5)
+}
+
+.sec2 div ul:nth-child(3) {
+    background-image: url(http://a3.qpic.cn/psb?/V13qiDY61WZU8n/mkgYKmr8tPARumAvNfQKsblwTo2qWfcILUOzY*OvOzY!/m/dDIBAAAAAAAAnull&bo=NgAzAAAAAAADByc!&rf=photolist&t=5)
+}
+
+.sec2 div ul:nth-child(4) {
+    background-image: url(http://a2.qpic.cn/psb?/V13qiDY61WZU8n/KjRHvR2pcfoM*Ze6LGIkwgoTZICoi0Y4pW9No8JKahs!/m/dDEBAAAAAAAAnull&bo=MgAzAAAAAAADByM!&rf=photolist&t=5)
+}
+
+.sec3 {
+    box-sizing: border-box;
+    height: 800px;
+    padding: 0;
+    margin: 0;
+    width: 1600px;
+    background: rgba(0, 0, 0, 0.6) url(http://m.qpic.cn/psb?/V13qiDY61WZU8n/*ulS1gdYd7EuCBmi25KiCPuJLt2ri.7226lemSrbUjo!/b/dDYBAAAAAAAA&bo=QAYgAwAAAAADdzc!&rf=viewer_4);
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: 100%;
+    position: relative;
+}
+
+.sec3 div:nth-of-type(1) {
+    padding-left: 250px;
+    padding-top: 150px;
+    margin: 0;
+}
+
+.sec3 h2 {
+    color: white;
+    font-weight: lighter;
+    font-size: 38px;
+    width: 350px;
+}
+
+.sec3 p {
+    color: rgba(196, 195, 195, 0.89);
+    line-height: 30px;
+    width: 350px;
+}
+
+.sec3 div:nth-of-type(2) {
+    padding: 25px 0 0 250px;
+    margin: 0;
+}
+
+.sec3 a {
+    height: 50px;
+    border: solid 1px rgba(255, 255, 255, 0.4);
+    color: white;
+    margin-right: 50px;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 5px;
+    word-spacing: 2px;
+}
+
+.sec3 a :hover,
+.sec3 a:focus {
+    background-color: white;
+    color: black;
+}
+
+.sec3 img {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    right: 0px;
+    top: 100px;
 }
