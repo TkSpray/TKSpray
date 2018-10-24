@@ -33,10 +33,9 @@ body>div {
     padding: 3% 0 2% 0;
     border: 0.1px solid;
     width: 960px;
-    margin: 0 20% 0 20%;
     height: 300px;
     position: relative;
-    top: 180px;
+    top: 260px;
 }
 
 .sec1 h1 {
@@ -48,9 +47,8 @@ body>div {
 }
 
 #p1 {
-    margin: 60px 0;
     position: relative;
-    top: 170px;
+    top: 200px;
     color: rgba(128, 128, 128, 0.89);
     letter-spacing: 2px;
 }
@@ -275,12 +273,15 @@ body>div {
 
 .sec6 {
     width: 1600px;
+    border-bottom: 1px solid rgba(207, 207, 207, 0.589);
+    padding-bottom: 70px;
 }
 
 .sec6 h2 {
     text-align: center;
     font-weight: lighter;
     font-size: 45px;
+    margin-top: 45px;
     margin-bottom: 20px;
 }
 
@@ -292,13 +293,212 @@ body>div {
     margin: 0 auto;
 }
 
-.sec6 div:nth-of-type(2) {
+.sec6-1 {
     margin: 30px auto 0 auto;
-    width: 900px;
+    width: 850px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
 }
 
-.sec6 img {
+.sec6-1 h4 {
+    position: relative;
+    top: 70px;
+    color: white;
+    font-weight: lighter;
+}
+
+.sec6-1 p {
+    position: relative;
+    width: 400px;
+    top: 60px;
+}
+
+.pic img {
     width: 400px;
     height: 300px;
     margin: 10px 10px;
+    top: 0;
+    left: 0;
+}
+
+.link1 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.705);
+    opacity: 0;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    top: 4210px;
+    left: 387px;
+}
+
+.link2 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.705);
+    opacity: 0;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    top: 4210px;
+    left: 813px;
+}
+
+.link3 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.705);
+    opacity: 0;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    top: 4532px;
+    left: 387px;
+}
+
+.link4 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.705);
+    opacity: 0;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    top: 4532px;
+    left: 813px;
+}
+
+.link1:hover {
+    opacity: 1;
+}
+
+.link2:hover {
+    opacity: 1;
+}
+
+.link3:hover {
+    opacity: 1;
+}
+
+.link4:hover {
+    opacity: 1;
+}
+
+.sec6-2 img {
+    position: relative;
+    top: 90px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 100%;
+    padding: 15px;
+}
+
+.sec7 {
+    width: 1200px;
+    margin: 0 250px;
+    height: 600px;
+    display: flex;
+    justify-content: space-around
+}
+
+.sec7-1 {
+    width: 400px;
+    height: 520px;
+    border: 1px solid rgba(207, 207, 207, 0.589);
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sec7-1 h4 {
+    margin-top: 40px;
+    font-weight: 400;
+}
+
+.sec7-1 input {
+    width: 300px;
+    height: 50px;
+    margin: 15px 45px;
+}
+
+.sec7-1 textarea {
+    width: 300px;
+    height: 150px;
+    margin: 15px 45px;
+}
+
+.sec7-1 button {
+    width: 300px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+.sec7-2 {
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+}
+
+.sec7-2 h2 {
+    font-weight: 200;
+    font-size: 45px;
+}
+
+.sec7-2 img {
+    padding-right: 10px;
+}
+
+.sec7-2 p {
+    line-height: 25px;
+    color: rgba(128, 128, 128, 0.89);
+}
+
+.sec7-2 ul {
+    height: 300px;
+    margin-top: 70px;
+}
+
+.sec7-2 li {
+    position: relative;
+    left: -35px;
+    width: 200px;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.sec8 {
+    width: 1600px;
+    height: 300px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.sec8-1 {
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sec8-1 div {
+    display: flex;
+    flex-direction: column;
+}
+
+.sec8 a {
+    text-decoration: none;
+    color: white;
+    line-height: 40px;
+    color: rgba(128, 128, 128, 0.89);
+}
+
+.sec8 p {
+    text-align: left;
+    color: rgba(128, 128, 128, 0.89);
+}
+
+.sec8-2 {
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 200px;
 }
