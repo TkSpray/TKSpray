@@ -6,21 +6,39 @@ html {
   height: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   html {
     font-size: 20px;
   }
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 450px) and (max-width: 599px) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
-
+.all {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(128, 128, 128, 0.11);
+}
+.all1 {
+  max-width: 750px;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
 .menu {
   margin: 0;
   height: 5.25rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 99;
 }
 
 .menu-1 {
@@ -75,9 +93,17 @@ html {
 }
 
 .user {
+  position: relative;
+  height: 33rem;
+  top: 5.25rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.13);
+}
+.user0 {
   width: 95%;
   height: 3rem;
   margin: 0 auto;
+  position: relative;
+  margin-top: 1rem;
 }
 
 .user1 img {
@@ -108,8 +134,8 @@ html {
 .user3 {
   width: 5rem;
   position: absolute;
-  right: 1rem;
-  top: 6rem;
+  right: 0;
+  top: 0;
   height: 1.5rem;
 }
 
@@ -123,7 +149,22 @@ html {
 
 .user4 {
   line-height: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
-
+.user4 p {
+  width: 95%;
+  margin: 0 auto;
+}
 .user5 {
+  margin: 0 auto;
+  width: 23rem;
+  height: 23rem;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 33.3% 33.3% 33.3%;
+}
+.user5 img {
+  width: 95%;
+  height: 95%;
 }
