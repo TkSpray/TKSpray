@@ -104,6 +104,15 @@
             </table>
         </div>
     </div>
+    <script>
+        var time = new Date();
+        if (time.getHours() < 12 && time.getHours() > 6)
+            alert("上午好");
+        if (time.getHours() > 12 && time.getHours() < 18)
+            alert("下午好");
+        else
+            alert("晚上好");
+    </script>
 </body>
 
 </html>
