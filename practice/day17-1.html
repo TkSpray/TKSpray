@@ -26,8 +26,22 @@
             // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
             // 这里是上一个任务的实现
         }
+
+        function chalen(num1, num2) {
+            var len = num1.length;
+            if (len > num2) {
+                console.log("大于指定位数");
+            } else {
+                var i = num2 - len;
+                for (; i > 0; i--) {
+                    num1 = '0' + num1;
+                }
+                return num1;
+            }
+        }
         document.getElementById("trans-btn").onclick = function () {
-            document.getElementById("result").innerHTML = dec2bin(document.getElementById("decnumber").value);
+            document.getElementById("result").innerHTML = chalen(dec2bin(document.getElementById("decnumber").value),
+                document.getElementById("bin-bit").value);
         }
         // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
         // 新的需求是，转化显示后的二进制数为bin-bit中输入的数字宽度，例如
