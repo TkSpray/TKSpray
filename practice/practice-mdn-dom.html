@@ -31,12 +31,24 @@
     </ul>
 
     <script>
-        var list = ;
-        var ipt = ;
-        var btn = ;
-        document.querySelector('button').onclick {
-            var add = document.querySelector('input').value;
-            document.querySelector('input').value = '1';
+        var list = document.querySelector('ul'),
+            ipt = document.querySelector('input'),
+            btn = document.querySelector('button');
+        btn.onclick = function () {
+            var add = ipt.value;
+            ipt.value = '';
+            var li_ = document.createElement('li');
+            var span_ = document.createElement('span');
+            var bton = document.createElement('button');
+            li_.appendChild(span_);
+            li_.appendChild(bton);
+            span_.textContent = add;
+            bton.textContent = 'Delete';
+            list.appendChild(li_);
+            bton.onclick = function () {
+                list.removeChild(li_);
+            }
+            ipt.focus();
         }
         /* 
         1.首先，下载shopping-list.html文件，并存入本地。你会看到它有一些极小的CSS，一个带有label、input和button的list和一个空的list以及<script> 元素。要添加的所有程序都在script里面。
