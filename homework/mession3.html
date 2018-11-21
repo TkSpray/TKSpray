@@ -6,8 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>input</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" media="screen" href="mession3.css" />
-  <script src="mession3.js"></script>
+  <style>
+    .wrapper{
+      text-align: center;
+    }
+    input{
+      height: 35px;
+      width: 200px;
+    }
+    ul li{
+      list-style-type: none;
+      border: 1px solid grey;
+      color: aliceblue;
+      width: 200px;
+      height: 28px;
+    }
+    ul li:hover,
+    .active{
+      background-color:  #EEA9B8;
+    }
+    .first {
+        background-color: aqua;
+      }
+</style>
 </head>
 
 <body>
@@ -15,6 +36,13 @@
     <input id="email-input" type="text" />
     <ul id="email-sug-wrapper" class="email-sug"></ul>
   </div>
+  <script>
+    var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+    var emailul = document.getElementById("email-sug-wrapper");
+    var emailinput = document.getElementById("email-input");
+
+    function
+  </script>
 </body>
 
 </html>
