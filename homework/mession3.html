@@ -43,21 +43,11 @@
       disp("");
       emailinput.focus();
     })
+
     emailinput.oninput = function () {
       var v = event.target.value.trim();
       build(v);
       disp(v);
-    }
-    document.getElementsByTagName('li').onclick = function () {
-      console.log(document.querySelectorAll('li'));
-      console.log(emailinput.value);
-      for (var i = 0; i < getli.length; i++) {
-        getli[i].onclick = function () {
-          console.log(emailinput.value);
-          console.log(getli[i].value);
-          emailinput.textContent = getli[i].value;
-        }
-      }
     }
 
     function build(va) {
