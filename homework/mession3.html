@@ -14,7 +14,7 @@
       height: 35px;
       width: 200px;
     }
-    ul li{
+    li{
       list-style-type: none;
       border: 1px solid grey;
       color: rgb(113, 177, 233);
@@ -22,6 +22,7 @@
       height: 28px;
       margin: 0 auto;
     }
+
 </style>
 </head>
 
@@ -36,7 +37,7 @@
     var emailinput = document.getElementById("email-input");
 
     emailul.addEventListener("click", function () {
-      getput();
+      emailinput.value = event.target.innerHTML;
       disp("");
       emailinput.focus();
     })
@@ -45,12 +46,14 @@
       build(v);
       disp(v);
     }
-
-    function getput() {
-      var getli = document.getElementById('email-sug-wrapper').childNodes;
+    document.getElementsByTagName('li').onclick = function () {
+      console.log(document.querySelectorAll('li'));
+      console.log(emailinput.value);
       for (var i = 0; i < getli.length; i++) {
         getli[i].onclick = function () {
-          emailinput.value = getli[i].innerHTML;
+          console.log(emailinput.value);
+          console.log(getli[i].value);
+          emailinput.textContent = getli[i].value;
         }
       }
     }
@@ -66,12 +69,12 @@
         last = va.slice(va.indexOf('@') + 1);
       }
       for (let i = 0; i < postfixList.length; i++) {
-        if (postfixList[i].indexOf(last) != -1)
+        if (postfixList[i].indexOf(last) != -1) {
           list += '<li>' + first + '@' + postfixList[i] + '</li>';
+        }
+        emailul.innerHTML = list;
       }
-      emailul.innerHTML = list;
     }
-
 
     function disp(a) {
       if (a != "") {
