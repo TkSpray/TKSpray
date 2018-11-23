@@ -22,8 +22,11 @@
       height: 28px;
       margin: 0 auto;
     }
-    li:hover{
+    li:hover,.active{
       background-color: #EEA9B8;
+    }
+    .first{
+      background-color: aqua;
     }
 </style>
 </head>
@@ -39,15 +42,44 @@
     var emailinput = document.getElementById("email-input");
 
     emailul.addEventListener("click", function () {
-      emailinput.value = event.target.innerHTML;
+      emailinput.value = htmlDecode(event.target.innerHTML);
       disp("");
-      emailinput.focus();
     })
 
     emailinput.oninput = function () {
       var v = event.target.value.trim();
       build(v);
+      emailul.children[0].className = 'first';
       disp(v);
+    }
+
+    var index = 0;
+    emailinput.onkeydown = function (e) {
+
+      if (e.keyCode == 13) {
+        emailinput.value = htmlDecode(emailul.children[index].innerHTML);
+        disp("");
+      }
+
+      if (e.keyCode == 38) {
+        if (index == 0) {
+          index = 4;
+          reset(index);
+        } else {
+          index--;
+          reset(index);
+        }
+      }
+
+      if (e.keyCode == 40) {
+        if (index == 4) {
+          index = 0;
+          reset(index);
+        } else {
+          index++;
+          reset(index);
+        }
+      }
     }
 
     function build(va) {
@@ -62,7 +94,7 @@
       }
       for (let i = 0; i < postfixList.length; i++) {
         if (postfixList[i].indexOf(last) != -1) {
-          list += '<li>' + first + '@' + postfixList[i] + '</li>';
+          list += '<li>' + htmlEncode(first + '@' + postfixList[i]) + '</li>';
         }
         emailul.innerHTML = list;
       }
@@ -96,6 +128,13 @@
       var output = temp.innerText || temp.textContent;
       temp = null;
       return output;
+    }
+
+    function reset(index) {
+      for (var i = 0; i < postfixList.length; i++) {
+        emailul.children[i].className = '';
+      }
+      emailul.children[index].className = 'active';
     }
   </script>
 </body>
