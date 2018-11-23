@@ -41,9 +41,11 @@
     var emailul = document.getElementById("email-sug-wrapper");
     var emailinput = document.getElementById("email-input");
 
+    emailinput.setAttribute('autofocus', 'autofocus');
     emailul.addEventListener("click", function () {
       emailinput.value = htmlDecode(event.target.innerHTML);
       disp("");
+      emailinput.focus();
     })
 
     emailinput.oninput = function () {
@@ -55,6 +57,10 @@
 
     var index = 0;
     emailinput.onkeydown = function (e) {
+
+      if (e.keyCode == 27) {
+        emailinput.select();
+      }
 
       if (e.keyCode == 13) {
         emailinput.value = htmlDecode(emailul.children[index].innerHTML);
