@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        function inqui(str) {
+        function showHint(str) {
                 var xmlhttp;
                 if (str.length == 0) {
                     document.getElementById("txtHint").innerHTML = "";
@@ -18,16 +18,18 @@
                 } else { // code for IE6, IE5
                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                console.log(xmlhttp);
 
-                 xmlhttp.onreadystatechange = function () {
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var xml = JSON.parse(xmlhttp.response);
+                        document.getElementById("txtHint").innerHTML = xml.items[0].login;
+                        
+                    }
+                }
 
-                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                         var xml = JSON.parse(xmlhttp.response);
-                         document.getElementById("txtHint").innerHTML = xml.data[0].context;
-                     }
-                 }
-                xmlhttp.open('get',"https://www.kuaidi100.com/query?type=yuantong&postid=" + str + "&id=1&valicode=&temp=" , true);
+
+
+                xmlhttp.open('get',"https://api.github.com/search/users?q=" + str, true);
                 xmlhttp.send();
             }
         </script>
@@ -36,17 +38,9 @@
 <body>
     <h3>Start typing a name in the input field below:</h3>
     <form action="">
-        圆通快递单号: <input type="text" id="txt1">
+        First name: <input type="text" id="txt1" onkeyup="showHint(this.value)" />
     </form>
-    <button id="btn">查询</button>;
     <p>Suggestions: <span id="txtHint"></span></p>
-    <script>
-        var btn = document.getElementById('btn');
-        btn.onclick = function () {
-            var input = document.getElementById('txt1').value;
-            inqui(input);
-        };
-    </script>
 </body>
 
 </html>
