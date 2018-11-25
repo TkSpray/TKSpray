@@ -7,6 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        html{
+            height: 100%;
+        }
+        .all {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(128, 128, 128, 0.11);
+        }
+        .all1 {
+            max-width: 550px;
+            background-color: white;
+            margin: 0 auto;
+            position: relative;
+            width: 100%;
+        }
         header {
             text-align: center;
             margin-bottom: 3rem;
@@ -35,28 +50,73 @@
             height: 2.5rem;
         }
     </style>
+    <script>
+        function request(username,password){
+        var xmlhttp;
+        var data;
+        data = {
+           "studentId": username,
+           "password": password
+            }
+            console.log(data);  
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.setRequestHeader('content-type', 'application/json');
+
+        xmlhttp.onreadystatechange = function () {
+
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var xml = JSON.parse(xmlhttp.response);
+            
+        }
+        }
+                xmlhttp.open('post', 'www.baidu.com', true);
+                xmlhttp.send(data);
+            }
+    </script>
 </head>
 
 <body>
-    <div class="main">
-        <header>
-            <h1>辅导员评测</h1>
-            <p>欢迎登陆</p>
-        </header>
-        <article>
-            <form action="/authserver/login?service=http://portal.uestc.edu.cn/" method="POST">
-                <div class="item1">
-                    <input id="username" name="username" placeholder="用户名" class="input" type="text" value>
-                </div>
-                <div class="item1">
-                    <input id="password" name="password" placeholder="密码" class="input" type="password" value>
-                </div>
-                <div class="item1">
-                    <button type="submit">登陆</button>
-                </div>
-            </form>
-        </article>
+    <div class="all">
+        <div class="all1">
+            <div class="main">
+                <header>
+                    <h1>辅导员评测</h1>
+                    <p>欢迎登陆</p>
+                </header>
+                <form action="">
+                    <div class="item1">
+                        <input id="username" placeholder="用户名" class="input" type="text">
+                    </div>
+                    <div class="item1">
+                        <input id="password" placeholder="密码" class="input" type="password">
+                    </div>
+                    <div class="item1">
+                        <button id="btn" type="submit">登陆</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    <script>
+        var btn = document.getElementById('btn');
+
+        btn.onclick = function () {
+            var username = document.getElementById('uesrname').value;
+            var password = document.getElementById('password').value;
+            if (username == '') {
+                alert("用户名不能为空");
+            } else if (password == '') {
+                alert('密码不能为空');
+            } else {
+                request(username, password)
+            }
+            console.log(username);
+        }
+    </script>
 </body>
 
 </html>
