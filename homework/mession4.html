@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        function showHint(str) {
+        function inqui(str) {
                 var xmlhttp;
                 if (str.length == 0) {
                     document.getElementById("txtHint").innerHTML = "";
@@ -18,15 +18,15 @@
                 } else { // code for IE6, IE5
                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                var xml = JSON.stringify(xmlhttp);
-
-                xmlhttp.onreadystatechange = function () {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("txtHint").innerHTML = xml;
-                    }
-                }
-                xmlhttp.open('get',"https://api.github.com/search/users?q=" + str, true);
+                console.log(xmlhttp);
+                // xmlhttp.onreadystatechange = function () {
+                //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //         document.getElementById("txtHint").innerHTML = xml.data[0].context;
+                //     }
+                // }
+                xmlhttp.open('get',"https://www.kuaidi100.com/query?type=yuantong&postid=" + str + "&id=1&valicode=&temp=" , true);
                 xmlhttp.send();
+                console.log(xml);
             }
         </script>
 </head>
@@ -34,9 +34,17 @@
 <body>
     <h3>Start typing a name in the input field below:</h3>
     <form action="">
-        First name: <input type="text" id="txt1" onkeyup="showHint(this.value)" />
+        圆通快递单号: <input type="text" id="txt1">
     </form>
+    <button id="btn">查询</button>;
     <p>Suggestions: <span id="txtHint"></span></p>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            var input = document.getElementById('txt1').value;
+            inqui(input);
+        };
+    </script>
 </body>
 
 </html>

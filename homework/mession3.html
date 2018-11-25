@@ -95,7 +95,7 @@
       if (va.indexOf('@') == -1) {
         first = va;
       } else {
-        first = va.slice(0, va.indexOf('@'));
+        first = va.slice(0, va.indexOf('@')); // slice 截取一个元素到另一个元素
         last = va.slice(va.indexOf('@') + 1);
       }
       for (let i = 0; i < postfixList.length; i++) {
