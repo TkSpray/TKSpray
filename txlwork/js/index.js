@@ -16,7 +16,7 @@ function request(username, password) {
     var xmlhttp;
     var formdata = new FormData();
     var message = new Object();
-    xmlhttp.open('post', 'www.baidu.com', true);
+    xmlhttp.open('post', '', true);
     message.studentId = document.getElementById('username').value;
     message.password = document.getElementById('password').value;
 
@@ -31,7 +31,7 @@ function request(username, password) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var xml = JSON.parse(xmlhttp.response);
             if (xml.errCode == 0) {
-                window.location.href = "answer.html";
+                window.location.href = "index1.html";
             } else if (xml.errCode == 100) {
                 window.location.href = "admin.html"
             } else {

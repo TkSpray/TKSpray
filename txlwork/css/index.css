@@ -18,11 +18,15 @@ html {
 
 header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+h3 {
+    font-weight: 400;
 }
 
 .main {
-    margin-top: 7rem;
+    margin-top: 8rem;
 }
 
 form {
@@ -32,6 +36,7 @@ form {
 
 .item1 {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 input {
@@ -39,18 +44,20 @@ input {
     width: 80%;
     margin: 0 auto;
     border-radius: 10px;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
     border: 1px solid rgb(71, 71, 71);
 }
 
 button {
     border-radius: 10px;
-    background-color: white;
-    border: 1px solid rgb(71, 71, 71);
-    width: 35%;
-    height: 2.5rem;
+    background-color: rgba(248, 207, 132, 0.822);
+    border: 1px rgb(71, 71, 71);
+    width: 80%;
+    height: 2.7rem;
+    font-size: 1rem;
 }
 
 #inform {
     text-align: center;
+    color: red;
 }
