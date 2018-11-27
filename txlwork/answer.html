@@ -7,59 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .all {
-            margin: 0;
-            padding: 0;
-            background-color: rgba(128, 128, 128, 0.11);
-        }
-
-        .all1 {
-            max-width: 550px;
-            background-color: white;
-            margin: 0 auto;
-            position: relative;
-            width: 100%;
-        }
-
-        .head {
-            margin: 3rem auto;
-        }
-
-        h2 {
-            text-align: center;
-        }
-        .ques{
-            border-top: solid 1px rgba(114, 114, 114, 0.445);
-            border-bottom: solid 1px rgba(114, 114, 114, 0.445);
-            padding: 1rem 0;
-        }
-        .question{
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-        .ques input{
-            margin: 0.5rem auto;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
     <div class="all">
         <div class="all1">
             <div class="head">
-                <h2>辅导员测评调查问卷</h2>
+                <h3>2018年辅导员工作满意度测评</h3>
+                <p class="p1"></p>
+                <p class="p1"></p>
             </div>
             <div class="ques">
-                <section>
-                    <p class="question">1</p>
-                    <input type="radio" name="ques_1" value="">非常满意<br>
-                    <input type="radio" name="ques_1" value="">满意<br>
-                    <input type="radio" name="ques_1" value="">一般<br>
-                    <input type="radio" name="ques_1" value="">不满意<br>
-                    <input type="radio" name="ques_1" value="">非常不满意
-                </section>
+                <p class="question"></p>
+                <div>
+                    <input type="radio" name="ques_1" value="" id="que1"><label for="que1"><span>优秀<br></span></label>
+                    <input type="radio" name="ques_1" value="" id="que2"><label for="que2"> <span>良好<br></span></label>
+                    <input type="radio" name="ques_1" value="" id="que3"><label for="que3"> <span>一般<br></span></label>
+                    <input type="radio" name="ques_1" value="" id="que4"><label for="que4"> <span>较差<br></span></label>
+                    <input type="radio" name="ques_1" value="" id="que5"><label for="que5"> <span>不了解<br></span></label>
+                </div>
+            </div>
+            <div class="btn">
+                <button id="btn">下一题</button>
             </div>
         </div>
     </div>

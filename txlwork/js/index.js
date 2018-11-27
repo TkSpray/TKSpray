@@ -14,11 +14,10 @@ btn.onclick = function () {
 
 function request(username, password) {
     var xmlhttp;
-    var formdata = new FormData();
-    var message = new Object();
+    var data = new Object();
     xmlhttp.open('post', '', true);
-    message.studentId = document.getElementById('username').value;
-    message.password = document.getElementById('password').value;
+    data.studentId = document.getElementById('username').value;
+    data.password = document.getElementById('password').value;
 
     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -40,6 +39,5 @@ function request(username, password) {
 
         }
     }
-    formdata.append('data', JSON.stringify(message));
-    xmlhttp.send(formdata);
+    xmlhttp.send(data);
 }
