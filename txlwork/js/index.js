@@ -32,7 +32,7 @@ function request(username, password) {
             if (xml.errCode == 0) {
                 window.location.href = "index1.html";
             } else if (xml.errCode == 100) {
-                window.location.href = "admin.html"
+                window.location.href = "admin.html";
             } else {
                 alert("登陆失败！");
             }

@@ -1,0 +1,45 @@
+.main {
+    margin: 0 200px;
+    width: 500px;
+
+}
+
+.sec1 {
+    border-bottom: 1px solid;
+    padding-bottom: 42px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.p1 {
+    text-indent: 2rem;
+}
+
+button {
+    position: absolute;
+    background-color: rgba(255, 224, 166, 0.822);
+    border: none;
+    height: 30px;
+    right: 0;
+}
+
+.sec2 {
+    vertical-align: middle;
+}
+
+.part {
+    display: inline-block;
+    height: 45px;
+    width: 500px;
+    background-color: rgba(207, 224, 243, 0.678);
+    margin: 10px auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+}
