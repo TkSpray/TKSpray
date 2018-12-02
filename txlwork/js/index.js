@@ -14,10 +14,10 @@ btn.onclick = function () {
 
 function request(username, password) {
     var xmlhttp;
-    var data = new Object();
-    xmlhttp.open('post', '', true);
-    data.studentId = document.getElementById('username').value;
-    data.password = document.getElementById('password').value;
+    var formdata = new FormData();
+
+    var studentId = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
 
     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -31,13 +31,17 @@ function request(username, password) {
             var xml = JSON.parse(xmlhttp.response);
             if (xml.errCode == 0) {
                 window.location.href = "index1.html";
-            } else if (xml.errCode == 100) {
+            } else if (xml.errCode == 7) {
                 window.location.href = "admin.html";
             } else {
                 alert("登陆失败！");
             }
 
         }
+        console.log(formdata);
     }
-    xmlhttp.send(data);
+    xmlhttp.open('post', 'http://api.com/user/login', true);
+    formdata.append('studentId', studentId);
+    formdata.append('password', password);
+    xmlhttp.send(formdata);
 }

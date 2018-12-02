@@ -2,7 +2,7 @@ var list = '';
 var a = [1, 2, 3, 4];
 var div = document.getElementsByClassName('sec2');
 
-for (var n = 0; n < 4; n++) {
+for (var n = 0; n < a.length; n++) {
     list += '<div class="part"><span> 辅导员:<a href="#">' + a[n] + '</a></span>' + '<span>平均分:' + a[n] + '</span>' + '<span>学生完成度:' + a[n] + '</span>' + '</div>';
 }
 
