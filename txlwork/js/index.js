@@ -29,11 +29,11 @@ function request(username, password1) {
 
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var xml = JSON.parse(xmlhttp.response);
-            if (xml.errCode == 0 || xml.errCode == 1 || xml.errCode == 4 || xml.errCode == 5) {
-                window.location.href = "index1.html";
-            } else if (xml.errCode == 7) {
-                window.location.href = "admin.html";
-            } else if (xml.errCode == 6) {
+            if (xml.errorCode == 0 || xml.errorCode == 1 || xml.errorCode == 4 || xml.errorCode == 5) {
+                window.location.href = "./index1.html";
+            } else if (xml.errorCode == 7) {
+                window.location.href = "./admin.html";
+            } else if (xml.errorCode == 6) {
                 alert('密码错误');
             } else {
                 alert("登陆失败！");
@@ -42,8 +42,8 @@ function request(username, password1) {
         }
         console.log(formdata);
     }
-    xmlhttp.open('post', 'http://api.com/user/login', true);
     formdata.append('studentId', studentId);
     formdata.append('password', password);
+    xmlhttp.open('post', 'http://api.com/user/login', true);
     xmlhttp.send(formdata);
 }

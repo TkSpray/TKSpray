@@ -29,25 +29,30 @@ window.onload = function () {
     } else { // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-
     xmlhttp.onredystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var xml = JSON.parse(xmlhttp.response);
             var data = xml.data;
             var names = data.names;
-            var points = data.points;
             var finished = data.finished;
             var unfinished = data.unfinished;
-            var unfinished = data.unfinished;
             var ques = data.questions;
+            var points = ques.ques_all;
+
+            for (var i = 0; i < names.length; i++) {
+
+            }
 
             if (xml.errCode == 0 || xml.errCode == 1 || xml.errCode == 4 || xml.errCode == 7) {
                 list1 = '<span>' + nm + '</span>' + '<span>总平均分:' + points + '</span>' + '<span>学生完成度:' + finished + '/' + unfinished + '</span>' + '</div>';
                 div1[0].innerHTML = list1;
 
-                for (var n = 0; n < a.length; n++) {
-                    list2 += '<span>' + '&nbsp' + '&nbsp' + names[n] + '</span>';
-                    list3 += '<div class="part"><p>' + que[n] + '</p>' + '<span>平均分:' + a[n] + '分</span></div>';
+                for (var a = 0; a < names.length; a++) {
+                    list2 += '<span>' + '&nbsp' + '&nbsp' + names[a] + '</span>';
+                }
+
+                for (var n = 0; n < que.length; n++) {
+                    list3 += '<div class="part"><p>' + que[n] + '</p>' + '<span>平均分:' + Object.values(ques)[n + 1] + '分</span></div>';
                 }
 
                 div2[0].innerHTML = list2;
@@ -56,11 +61,11 @@ window.onload = function () {
         } else {
             alert('系统错误');
         }
-    }
+    };
     Name.append('name', nm);
     xmlhttp.open('post', 'http://api.com/admin/teachers', true);
     xmlhttp.send(Name);
-}
+};
 btn.onclick = function () {
     window.location.href = "http://api.com/admin/download_one";
-}
+};

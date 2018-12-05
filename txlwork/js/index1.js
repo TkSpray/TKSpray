@@ -2,7 +2,8 @@ window.onload = function () {
     var xmlhttp;
     var p = document.querySelector('p');
     var btn = document.querySelector('button');
-    var str = '';
+    var finished1 = '';
+    var unfinished1 = '';
 
     btn.innerHTML = '继续测评';
     p.className = 'text';
@@ -16,38 +17,40 @@ window.onload = function () {
     xmlhttp.onredystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var xml = JSON.parse(xmlhttp.response);
-            var remains = xml.date;
+            var data = xml.date;
+            var finished = data.finished;
+            var unfinished = data.unfinished;
 
             for (var n = 0; n < remains.length; n++) {
-                str += '<span>' + remains[n] + '&nbsp&nbsp</span>'
-                console.log(str);
+                finished1 += '<span>' + finished[n] + '&nbsp&nbsp</span>';
+                unfinished1 += '<span>' + unfinished[n] + '&nbsp&nbsp</span>';
             }
-            if (xml.errCode == 5) {
+            if (xml.errorCode == 5) {
                 btn.innerHTML = '返回';
                 p.innerHTML = '您已经完成了所有的测评<br>感谢您的参与！';
                 btn.onclick = function () {
                     window.location.href = "index.html";
                 };
-            } else if (xml.errCode == 0 || xml.errCode == 1) {
-                p.innerHTML = '您需要评议的辅导员有' + str + '的测评未完成';
+            } else if (xml.errorCode == 0 || xml.errorCode == 1) {
+                p.innerHTML = '您需要评议的辅导员有' + finished1 + '还有' + unfinished1 + '的测评未完成';
                 btn.onclick = function () {
                     window.location.href = "answer.html";
                 };
-            } else if (xml.errCode == 4) {
+            } else if (xml.errorCode == 4) {
                 btn.innerHTML = '开始评测';
                 p.className = 'text';
-                p.innerHTML = '欢迎您参加2018年辅导员工作满意度测评<br><br>您需要测评的辅导员是' + str + '<br><br>每位辅导员有对应的9个测评问题,请根据实际情况选择对应选项<br><br>若中途退出，数据将不予以保存,因此请尽量一次填写完问卷，谢谢';
+                p.innerHTML = '欢迎您参加2018年辅导员工作满意度测评<br><br>您需要测评的辅导员是' + finished1 + '<br><br>每位辅导员有对应的9个测评问题,请根据实际情况选择对应选项<br><br>若中途退出，数据将不予以保存,因此请尽量一次填写完问卷，谢谢';
                 btn.onclick = function () {
                     window.location.href = "answer.html";
                 };
-            } else if (xml.errCode == 2 || xml.errCode == 3 || xml.errCode == 6) {
+            } else if (xml.errorCode == 2 || xml.errorCode == 3 || xml.errorCode == 6) {
                 alert('登录失败');
                 window.location.href = "index.html";
             } else {
                 alert('系统错误');
             }
         }
-    }
+    };
     xmlhttp.open('get', 'http://api.com/user/remains', true);
     xmlhttp.send();
 }

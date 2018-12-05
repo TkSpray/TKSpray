@@ -24,7 +24,7 @@ window.onload = function () {
 
                 for (var n = 0; n < data.length; n++) {
                     var nm = data[n].name;
-                    var points = data[n].points;
+                    var points = data[n].ques_all;
                     var finished = data[n].finished;
                     var unfinished = data[n].unfinished;
                     list += '<div class="part"><span> 辅导员:<a href="#">' + nm[n] + '</a></span>' + '<span>平均分:' + points[n] + '</span>' + '<span>学生完成度:' + finished[n] + '/' + unfinished[n] + '</span>' + '</div>';
