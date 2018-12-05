@@ -1,22 +1,54 @@
-var data = new Object();
+var data = new FormData();
 var btn = document.getElementById('btn');
-var input = document.getElementsByName('ques_1');
-var teacher;
+var input = document.getElementsByName('ques');
 var n = 1;
 var p1 = document.getElementsByClassName('p1')[0];
 var p2 = document.getElementsByClassName('p1')[1];
 var que = document.getElementsByClassName('question')[0];
 
 window.onload = function () {
-    var finished = 'xxx';
-    var doing = 'xx';
-    p1.innerHTML = "您需要评议的辅导员有" + finished;
-    p2.innerHTML = "您正在评议的辅导员是" + doing;
+    var xmlhttp1;
+
+    if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp1 = new XMLHttpRequest();
+    } else { // code for IE6, IE5
+        xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp1.onredystatechange = function () {
+        if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
+            var xml1 = JSON.parse(xmlhttp1.response);
+            var doing = xml1.data[0];
+            var finished = xml1.data;
+
+            if (xml1.errCode == 0 || xml1.errCode == 1 || xml1.errCode == 4) {
+                data.append('teacher', doing);
+                p1.innerHTML = "您需要评议的辅导员有" + finished;
+                p2.innerHTML = "您正在评议的辅导员是" + doing;
+                data.append('teacher', doing);
+            } else if (xml1.errCode == 5) {
+                alert('您已完成所有评测！');
+                window.location.href = 'index.html';
+            } else if (xml1.errCode == 2 || xml1.errCode == 3) {
+                alert('未登录');
+                window.location.href = "index.html";
+            } else if (xml1.errCode == 6) {
+                alert('密码错误!');
+                window.location.href = 'index.html';
+            } else if (xml1.errCode == 7) {
+                window.location.href = 'admin.html';
+            }
+        }
+    }
+    xmlhttp1.open('get', 'http://api.com/user/remains', true);
+    xmlhttp1.send();
+
     que.innerHTML = '1/9.作风正派，责任心强，工作有激情';
 }
 
-function requst() {
+function request() {
     var xmlhttp;
+
     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     } else { // code for IE6, IE5
@@ -34,19 +66,19 @@ function requst() {
             }
         }
     }
-    xmlhttp.open('post', '', true);
+    xmlhttp.open('post', 'http://api.com/user/store', true);
     xmlhttp.send(data);
 }
 
 btn.onclick = function () {
-    for (var i = 0; i < input.length; i++) {
-        if (input[i].checked == true) {
-            n++;
-            var value = input[i].value;
-            val = parseFloat(value);
-            data["ques_" + n] = val;
-            console.log(data);
-            if (n <= 9) {
+    if (n <= 9) {
+        for (var i = 0; i < input.length; i++) {
+            if (input[i].checked == true) {
+                var value = input[i].value;
+                val = parseFloat(value);
+                data.append('ques_' + n, val);
+                n++;
+                console.log(data.get(ques_))
                 switch (n) {
                     case 2:
                         que.innerHTML = '2/9.工作能力强，有成效';
@@ -73,12 +105,10 @@ btn.onclick = function () {
                         que.innerHTML = '9/9.妥善协调同学关系，及时化解各种矛盾';
                         btn.innerHTML = '提交';
                         break;
-                    default:
-                        alert('无问题！');
+                    case 10:
+                        request();
                         break;
                 }
-            } else if (n = 10) {
-                request();
             }
         }
     }
