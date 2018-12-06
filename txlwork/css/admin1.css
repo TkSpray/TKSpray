@@ -10,7 +10,14 @@
     padding-bottom: 40px;
 }
 
-button {
+#btn1 {
+    background-color: rgba(255, 224, 166, 0.822);
+    border: none;
+    height: 30px;
+    width: 60px;
+}
+
+#btn {
     position: absolute;
     background-color: rgba(255, 224, 166, 0.822);
     border: none;

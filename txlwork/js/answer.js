@@ -5,6 +5,7 @@ var n = 1;
 var p1 = document.getElementsByClassName('p1')[0];
 var p2 = document.getElementsByClassName('p1')[1];
 var que = document.getElementsByClassName('question')[0];
+var list;
 
 window.onload = function () {
     var xmlhttp1;
@@ -15,36 +16,49 @@ window.onload = function () {
         xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    xmlhttp1.onredystatechange = function () {
+    xmlhttp1.onreadystatechange = function () {
         if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
-            var xml1 = JSON.parse(xmlhttp1.response);
-            var doing = xml1.data[0];
-            var finished = xml1.data;
+            var xml1 = JSON.parse(this.responseText);
+            var res = xml1.data;
+            var doing = res.unfinished[0];
+            var finished = res.finished;
+            var unfinished = res.unfinished;
 
-            if (xml1.errCode == 0 || xml1.errCode == 1 || xml1.errCode == 4) {
+            console.log(doing);
+            console.log(finished);
+
+            if (xml1.errorCode == 0 || xml1.errorCode == 1 || xml1.errorCode == 4) {
                 data.append('teacher', doing);
-                p1.innerHTML = "您需要评议的辅导员有" + finished;
+                if (unfinished.length == 1) {
+                    p1.innerHTML = '你已完成其他全部辅导员评测';
+                } else {
+                    for (var a = 0; a < finished.length; a++) {
+                        list += '<span>' + '&nbsp' + '&nbsp' + finished[a] + '</span>';
+                    }
+                    p1.innerHTML = "您需要评议的辅导员有" + list;
+                }
                 p2.innerHTML = "您正在评议的辅导员是" + doing;
                 data.append('teacher', doing);
-            } else if (xml1.errCode == 5) {
+            } else if (xml1.errorCode == 5) {
                 alert('您已完成所有评测！');
                 window.location.href = 'index.html';
-            } else if (xml1.errCode == 2 || xml1.errCode == 3) {
+            } else if (xml1.errorCode == 2 || xml1.errorCode == 3) {
                 alert('未登录');
                 window.location.href = "index.html";
-            } else if (xml1.errCode == 6) {
+            } else if (xml1.errorCode == 6) {
                 alert('密码错误!');
                 window.location.href = 'index.html';
-            } else if (xml1.errCode == 7) {
+            } else if (xml1.errorCode == 7) {
                 window.location.href = 'admin.html';
             }
         }
-    }
+    };
     xmlhttp1.open('get', 'http://api.com/user/remains', true);
+    xmlhttp1.withCredentials = true;
     xmlhttp1.send();
 
     que.innerHTML = '1/9.作风正派，责任心强，工作有激情';
-}
+};
 
 function request() {
     var xmlhttp;
@@ -55,19 +69,22 @@ function request() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    xmlhttp.onredystatechange = function () {
+    xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var xml = JSON.parse(xmlhttp.response);
             teacher = xml.teacher;
-            if (xml.errCode == 0) {
+            if (xml.errorCode == 0) {
 
-            } else if (xml.errCode == 1) {
+            } else if (xml.errorCode == 1) {
 
             }
         }
     }
     xmlhttp.open('post', 'http://api.com/user/store', true);
+    xmlhttp.withCredentials = true;
     xmlhttp.send(data);
+    alert('已完成该辅导员评测！');
+    window.location.href = 'index1.html';
 }
 
 btn.onclick = function () {
@@ -78,7 +95,6 @@ btn.onclick = function () {
                 val = parseFloat(value);
                 data.append('ques_' + n, val);
                 n++;
-                console.log(data.get(ques_))
                 switch (n) {
                     case 2:
                         que.innerHTML = '2/9.工作能力强，有成效';

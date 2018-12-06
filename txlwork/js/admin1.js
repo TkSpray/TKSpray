@@ -9,18 +9,9 @@ var que = ['Q1.作风正派，责任心强，工作有激情', 'Q2.工作能力�
 var btn = document.getElementById('btn');
 var h1 = document.querySelector('h1');
 var nm = window.location.href.split('=')[1];
+var btn1 = document.getElementById('btn1');
 
 h1.innerHTML = '辅导员' + nm + '工作满意度测评';
-list1 = '<span>' + a[0] + '</span>' + '<span>平均分:' + a[1] + '</span>' + '<span>学生完成度:' + a[3] + '/' + a[2] + '</span>' + '</div>';
-div1[0].innerHTML = list1;
-
-for (var n = 0; n < a.length; n++) {
-    list2 += '<span>' + '&nbsp' + '&nbsp' + a[n] + '</span>';
-    list3 += '<div class="part"><p>' + que[n] + '</p>' + '<span>平均分:' + a[n] + '分</span></div>';
-}
-div2[0].innerHTML = list2;
-
-div3[0].innerHTML = list3;
 
 window.onload = function () {
     var Name = new FormData();
@@ -29,7 +20,7 @@ window.onload = function () {
     } else { // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onredystatechange = function () {
+    xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var xml = JSON.parse(xmlhttp.response);
             var data = xml.data;
@@ -39,11 +30,7 @@ window.onload = function () {
             var ques = data.questions;
             var points = ques.ques_all;
 
-            for (var i = 0; i < names.length; i++) {
-
-            }
-
-            if (xml.errCode == 0 || xml.errCode == 1 || xml.errCode == 4 || xml.errCode == 7) {
+            if (xml.errorCode == 0 || xml.errorCode == 1 || xml.errorCode == 4 || xml.errorCode == 7) {
                 list1 = '<span>' + nm + '</span>' + '<span>总平均分:' + points + '</span>' + '<span>学生完成度:' + finished + '/' + unfinished + '</span>' + '</div>';
                 div1[0].innerHTML = list1;
 
@@ -57,15 +44,19 @@ window.onload = function () {
 
                 div2[0].innerHTML = list2;
                 div3[0].innerHTML = list3;
+            } else {
+                alert('系统错误');
             }
-        } else {
-            alert('系统错误');
         }
     };
-    Name.append('name', nm);
-    xmlhttp.open('post', 'http://api.com/admin/teachers', true);
+    Name.append('teacher_name', nm);
+    xmlhttp.open('post', 'http://api.com/admin/teacher', true);
+    xmlhttp.withCredentials = true;
     xmlhttp.send(Name);
 };
 btn.onclick = function () {
-    window.location.href = "http://api.com/admin/download_one";
+    window.location.href = "http://api.com/admin/download?teacher=" + nm;
 };
+btn1.onclick = function () {
+    window.location.href = "admin.html";
+}
