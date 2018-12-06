@@ -16,6 +16,10 @@ h1 {
     font-size: 28px;
 }
 
+a {
+    color: blue;
+}
+
 .p1 {
     text-indent: 2rem;
 }

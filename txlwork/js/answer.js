@@ -126,9 +126,10 @@ btn.onclick = function () {
                         request();
                         break;
                 }
+                input[i].checked = false;
+                time(this);
             }
         }
-        time(this);
     }
 };
 
@@ -144,5 +145,15 @@ function time(a) {
         setTimeout(function () {
             time(a);
         }, 1000);
+    }
+}
+
+function check(radio) {
+    if (radio.tag == 1) {
+        radio.checked = false;
+        radio.tag = 0;
+    } else {
+        radio.checked = true;
+        radio.tag = 1;
     }
 }

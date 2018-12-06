@@ -29,8 +29,8 @@ window.onload = function () {
             var unfinished = data.unfinished;
             var ques = data.questions;
             var points = ques.ques_all;
-            var all = finished.length + unfinished.length;
-            var per = finished.length / all;
+            var all = Number(finished) + Number(unfinished);
+            var per = finished / all;
 
             if (xml.errorCode == 0 || xml.errorCode == 1 || xml.errorCode == 4 || xml.errorCode == 7) {
                 list1 = '<span>' + nm + '</span>' + '<span>总平均分:' + points + '</span>' + '<span>学生完成度:' + finished + '/' + all + '(' + toPercent(per) + ')' + '</span>' + '</div>';
@@ -61,7 +61,7 @@ btn.onclick = function () {
 };
 btn1.onclick = function () {
     window.location.href = "admin.html";
-}
+};
 
 function toPercent(point) {
     var str = Number(point * 100).toFixed(2);

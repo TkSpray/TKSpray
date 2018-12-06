@@ -21,12 +21,9 @@ window.onload = function () {
                     var points = data[n].ques_all;
                     var finished = data[n].finished;
                     var unfinished = data[n].unfinished;
-                    console.log(xml);
-                    console.log(nm);
-                    console.log(points);
-                    console.log(finished);
-                    console.log(unfinished);
-                    list += '<div class="part"><span> 辅导员:<a href="#">' + nm + '</a></span>' + '<span>平均分:' + points + '</span>' + '<span>学生完成度:' + finished + '/' + unfinished + '</span>' + '</div>';
+                    var all = Number(finished) + Number(unfinished);
+                    var per = finished / all;
+                    list += '<div class="part"><span> 辅导员:<a href="#">' + nm + '</a></span>' + '<span>平均分:' + points + '</span>' + '<span>学生完成度:' + finished + '/' + all + '(' + toPercent(per) + ')' + '</span>' + '</div>';
                 }
 
                 div[0].innerHTML = list;
