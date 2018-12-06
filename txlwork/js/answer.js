@@ -6,6 +6,7 @@ var p1 = document.getElementsByClassName('p1')[0];
 var p2 = document.getElementsByClassName('p1')[1];
 var que = document.getElementsByClassName('question')[0];
 var list;
+var wait = 1;
 
 window.onload = function () {
     var xmlhttp1;
@@ -127,5 +128,21 @@ btn.onclick = function () {
                 }
             }
         }
+        time(this);
+    }
+};
+
+function time(a) {
+    if (wait == 0) {
+        a.removeAttribute('disabled');
+        a.innerHTML = '下一题';
+        wait = 1;
+    } else {
+        a.setAttribute('disabled', true);
+        a.innerHTML = '下一题(' + wait + ')';
+        wait--;
+        setTimeout(function () {
+            time(a);
+        }, 1000);
     }
 }

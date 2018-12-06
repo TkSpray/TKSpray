@@ -48,3 +48,9 @@ document.addEventListener('click', function (ev) {
         window.location.href = 'admin1.html#name=' + name;
     }
 });
+
+function toPercent(point) {
+    var str = Number(point * 100).toFixed(2);
+    str += "%";
+    return str;
+}

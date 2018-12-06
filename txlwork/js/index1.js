@@ -30,17 +30,21 @@ window.onload = function () {
                 var finished = data.finished;
                 var unfinished = data.unfinished;
 
-                for (var n = 0; n < finished.length; n++) {
-                    finished1 += '<span>' + finished[n] + '&nbsp&nbsp</span>';
-                }
+                if (unfinished.length == 1) {
+                    p.innerHTML = '你只有辅导员' + finished[0] + '需要评测';
+                } else {
+                    for (var n = 0; n < finished.length; n++) {
+                        finished1 += '<span>' + finished[n] + '&nbsp&nbsp</span>';
+                    }
 
-                for (var i = 0; i < unfinished.length; i++) {
-                    unfinished1 += '<span>' + unfinished[n] + '&nbsp&nbsp</span>';
-                }
-                p.innerHTML = '您需要评议的辅导员有' + finished1 + '还有' + unfinished1 + '的测评未完成';
+                    for (var i = 0; i < unfinished.length; i++) {
+                        unfinished1 += '<span>' + unfinished[n] + '&nbsp&nbsp</span>';
+                    }
+                    p.innerHTML = '您已经评议的辅导员有' + finished1 + '还有' + unfinished1 + '的测评未完成';
+                };
                 btn.onclick = function () {
                     window.location.href = "answer.html";
-                };
+                }
             } else if (xml.errorCode == 4) {
                 var finished = data.finished;
                 var unfinished = data.unfinished;
