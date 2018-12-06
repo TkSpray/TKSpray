@@ -8,6 +8,8 @@ var que = document.getElementsByClassName('question')[0];
 var list;
 var wait = 1;
 var cho = false;
+p1.innerHTML = "您需要评议的辅导员有";
+p2.innerHTML = "您正在评议的辅导员是";
 
 window.onload = function () {
     var xmlhttp1;

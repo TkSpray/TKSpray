@@ -14,50 +14,56 @@ html {
     margin: 0 auto;
     position: relative;
     width: 100%;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-}
-
-h3 {
-    font-weight: 400;
+    height: 650px;
+    background-image: url("bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top: 12rem;
 }
 
 .main {
-    margin-top: 8rem;
+    background-color: rgba(255, 255, 255, 0.541);
+    width: 90%;
+    margin: 0 auto;
 }
 
-form {
-    width: 100%;
-    border-radius: 5px;
+.head {
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 20px;
 }
 
 .item1 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-top: 50px;
 }
 
 input {
     height: 2rem;
     width: 60%;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 25px;
     border: 1px;
     border-bottom: 1px solid rgb(171, 171, 171);
+    background-color: rgba(255, 255, 255, 0.541);
 }
 
 button {
     border-radius: 10px;
-    background-color: rgba(248, 207, 132, 0.822);
+    background-color: rgba(254, 206, 80, 0.822);
     border: 1px rgb(71, 71, 71);
-    width: 80%;
-    height: 2.7rem;
-    font-size: 1rem;
+    width: 60%;
+    height: 2.2rem;
+    font-size: 17px;
 }
 
 #inform {
     text-align: center;
     color: red;
+}
+
+.foot {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 4rem;
 }
