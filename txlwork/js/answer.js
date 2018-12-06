@@ -7,6 +7,7 @@ var p2 = document.getElementsByClassName('p1')[1];
 var que = document.getElementsByClassName('question')[0];
 var list;
 var wait = 1;
+var cho = false;
 
 window.onload = function () {
     var xmlhttp1;
@@ -25,13 +26,10 @@ window.onload = function () {
             var finished = res.finished;
             var unfinished = res.unfinished;
 
-            console.log(doing);
-            console.log(finished);
-
             if (xml1.errorCode == 0 || xml1.errorCode == 1 || xml1.errorCode == 4) {
                 data.append('teacher', doing);
                 if (unfinished.length == 1) {
-                    p1.innerHTML = '你已完成其他全部辅导员评测';
+                    p1.innerHTML = '';
                 } else {
                     for (var a = 0; a < finished.length; a++) {
                         list += '<span>' + '&nbsp' + '&nbsp' + finished[a] + '</span>';
@@ -39,7 +37,6 @@ window.onload = function () {
                     p1.innerHTML = "您需要评议的辅导员有" + list;
                 }
                 p2.innerHTML = "您正在评议的辅导员是" + doing;
-                data.append('teacher', doing);
             } else if (xml1.errorCode == 5) {
                 alert('您已完成所有评测！');
                 window.location.href = 'index.html';
@@ -96,6 +93,7 @@ btn.onclick = function () {
                 val = parseFloat(value);
                 data.append('ques_' + n, val);
                 n++;
+                cho = true;
                 switch (n) {
                     case 2:
                         que.innerHTML = '2/9.工作能力强，有成效';
@@ -130,6 +128,10 @@ btn.onclick = function () {
                 time(this);
             }
         }
+        if (!cho) {
+            alert('请选择');
+        }
+        cho = false;
     }
 };
 

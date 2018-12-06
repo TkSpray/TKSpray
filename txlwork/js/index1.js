@@ -26,26 +26,7 @@ window.onload = function () {
                 btn.onclick = function () {
                     window.location.href = "index.html";
                 };
-            } else if (xml.errorCode == 0 || xml.errorCode == 1) {
-                var finished = data.finished;
-                var unfinished = data.unfinished;
-
-                if (unfinished.length == 1) {
-                    p.innerHTML = '你只有辅导员' + finished[0] + '需要评测';
-                } else {
-                    for (var n = 0; n < finished.length; n++) {
-                        finished1 += '<span>' + finished[n] + '&nbsp&nbsp</span>';
-                    }
-
-                    for (var i = 0; i < unfinished.length; i++) {
-                        unfinished1 += '<span>' + unfinished[n] + '&nbsp&nbsp</span>';
-                    }
-                    p.innerHTML = '您已经评议的辅导员有' + finished1 + '还有' + unfinished1 + '的测评未完成';
-                };
-                btn.onclick = function () {
-                    window.location.href = "answer.html";
-                }
-            } else if (xml.errorCode == 4) {
+            } else if (xml.errorCode == 0 || xml.errorCode == 1 || xml.errorCode == 4) {
                 var finished = data.finished;
                 var unfinished = data.unfinished;
 
@@ -58,7 +39,7 @@ window.onload = function () {
                 }
                 btn.innerHTML = '开始评测';
                 p.className = 'text';
-                p.innerHTML = '欢迎您参加2018年辅导员工作满意度测评<br><br>您需要测评的辅导员是' + finished1 + '<br><br>每位辅导员有对应的9个测评问题,请根据实际情况选择对应选项<br><br>若中途退出，数据将不予以保存,因此请尽量一次填写完问卷，谢谢';
+                p.innerHTML = '欢迎您参加2018年辅导员工作满意度测评<br><br>您需要测评的辅导员是' + finished1 + unfinished1 + '<br>还需要对' + unfinished1 + '继续评测' + '<br><br>每位辅导员有对应的9个测评问题,请根据实际情况选择对应选项<br><br>若中途退出，数据将不予以保存,因此请尽量一次填写完问卷，谢谢!';
                 btn.onclick = function () {
                     window.location.href = "answer.html";
                 };

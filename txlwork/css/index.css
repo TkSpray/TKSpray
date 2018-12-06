@@ -41,11 +41,11 @@ form {
 
 input {
     height: 2rem;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
-    border-radius: 10px;
     margin-top: 1rem;
-    border: 1px solid rgb(71, 71, 71);
+    border: 1px;
+    border-bottom: 1px solid rgb(171, 171, 171);
 }
 
 button {
