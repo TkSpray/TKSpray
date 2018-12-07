@@ -27,6 +27,11 @@ html {
     margin: 0 auto;
 }
 
+h2 {
+    font-size: 25px;
+    font-weight: 350;
+}
+
 .head {
     text-align: center;
     padding-top: 3rem;
