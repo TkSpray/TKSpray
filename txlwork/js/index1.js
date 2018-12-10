@@ -43,11 +43,15 @@ window.onload = function () {
                 btn.onclick = function () {
                     window.location.href = "answer.html";
                 };
-            } else if (xml.errorCode == '2' || xml.errorCode == 3 || xml.errorCode == 6) {
+            } else if (xml.errorCode == 2 || xml.errorCode == 3 || xml.errorCode == 6) {
                 alert('登录失败');
                 btn.onclick = function () {
                     window.location.href = "index.html";
                 };
+            } else if (xml.errorCode == 8) {
+                alert('非法操作，权限不够');
+            } else if (xml.errorCode == 10) {
+                alert('该学生不在评测范围内');
             } else {
                 alert('系统错误');
             }

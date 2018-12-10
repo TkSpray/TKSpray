@@ -42,7 +42,11 @@ function request(username, password1) {
             } else if (xml.errorCode == 7) {
                 window.location.href = "./admin.html";
             } else if (xml.errorCode == 6) {
-                alert("密码错误");
+                alert("账号密码错误");
+            } else if (xml.errorCode == 8) {
+                alert('非法操作，权限不够');
+            } else if (xml.errorCode == 10) {
+                alert('该学生不在评测范围内');
             } else {
                 alert("登陆失败！");
             }

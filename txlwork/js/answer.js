@@ -8,6 +8,7 @@ var que = document.getElementsByClassName('question')[0];
 var list;
 var wait = 1;
 var cho = false;
+var b = 0;
 p1.innerHTML = "您需要评议的辅导员有";
 p2.innerHTML = "您正在评议的辅导员是";
 
@@ -50,6 +51,12 @@ window.onload = function () {
                 window.location.href = 'index.html';
             } else if (xml1.errorCode == 7) {
                 window.location.href = 'admin.html';
+            } else if (xml.errorCode == 8) {
+                alert('非法操作，权限不够');
+                window.location.href = 'index.html';
+            } else if (xml.errorCode == 10) {
+                alert('该学生不在评测范围内');
+                window.location.href = 'index.html';
             }
         }
     };
@@ -57,7 +64,7 @@ window.onload = function () {
     xmlhttp1.withCredentials = true;
     xmlhttp1.send();
 
-    que.innerHTML = '1/9.作风正派，责任心强，工作有激情';
+    que.innerHTML = '1/10.作风正派，责任心强，工作有激情';
 };
 
 function request() {
@@ -79,7 +86,7 @@ function request() {
 
             }
         }
-    }
+    };
     xmlhttp.open('post', 'http://api.com/user/store', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send(data);
@@ -88,7 +95,7 @@ function request() {
 }
 
 btn.onclick = function () {
-    if (n <= 9) {
+    if (n <= 10) {
         for (var i = 0; i < input.length; i++) {
             if (input[i].checked == true) {
                 var value = input[i].value;
@@ -98,31 +105,33 @@ btn.onclick = function () {
                 cho = true;
                 switch (n) {
                     case 2:
-                        que.innerHTML = '2/9.工作能力强，有成效';
+                        que.innerHTML = '2/10.工作能力强，有成效';
                         break;
                     case 3:
-                        que.innerHTML = '3/9.关心同学，帮助解决思想上的困惑';
+                        que.innerHTML = '3/10.关心同学，帮助解决思想上的困惑';
                         break;
                     case 4:
-                        que.innerHTML = '4/9.引导同学成长成才，指导职业规划、就业考研和创新创业';
+                        que.innerHTML = '4/10.引导同学成长成才，指导职业规划、就业考研和创新创业';
                         break;
                     case 5:
-                        que.innerHTML = '5/9.关注同学学业，深入课堂，关心同学的学习进步和变化';
+                        que.innerHTML = '5/10.关注同学学业，深入课堂，关心同学的学习进步和变化';
                         break;
                     case 6:
-                        que.innerHTML = '6/9.深入寝室，与同学交心谈心，开展寝室文化建设和卫生安全教育活动';
+                        que.innerHTML = '6/10.深入寝室，与同学交心谈心，开展寝室文化建设和卫生安全教育活动';
                         break;
                     case 7:
-                        que.innerHTML = '7/9.在各类评选、评定中公正无私，真实透明';
+                        que.innerHTML = '7/10.在各类评选、评定中公正无私，真实透明';
                         break;
                     case 8:
-                        que.innerHTML = '8/9.关心关爱家庭经济困难学生';
+                        que.innerHTML = '8/10.关心关爱家庭经济困难学生';
                         break;
                     case 9:
-                        que.innerHTML = '9/9.妥善协调同学关系，及时化解各种矛盾';
-                        btn.innerHTML = '提交';
+                        que.innerHTML = '9/10.妥善协调同学关系，及时化解各种矛盾';
                         break;
                     case 10:
+                        que.innerHTML = '10/10.总体评价';
+                        break;
+                    case 11:
                         request();
                         break;
                 }
@@ -142,10 +151,19 @@ function time(a) {
         a.removeAttribute('disabled');
         a.innerHTML = '下一题';
         wait = 1;
+        b++;
+        console.log(b);
+        if (b == 18) {
+            a.innerHTML = '提交';
+        }
     } else {
         a.setAttribute('disabled', true);
         a.innerHTML = '下一题(' + wait + ')';
         wait--;
+        b++;
+        if (b == 17) {
+            a.innerHTML = '提交'
+        }
         setTimeout(function () {
             time(a);
         }, 1000);

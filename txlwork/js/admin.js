@@ -27,6 +27,8 @@ window.onload = function () {
                 }
 
                 div[0].innerHTML = list;
+            } else {
+                alert('系统错误');
             }
         }
     };
