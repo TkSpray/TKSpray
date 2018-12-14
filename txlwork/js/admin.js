@@ -44,7 +44,7 @@ btn.onclick = function () {
 document.addEventListener('click', function (ev) {
     if (ev.target.nodeName === "A") {
         var name = ev.target.innerText;
-        window.location.href = 'admin1.html#name=' + name;
+        window.location.href = encodeURI('admin1.html#name=' + name);
     }
 });
 

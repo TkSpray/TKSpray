@@ -12,7 +12,7 @@ var b = 0;
 p1.innerHTML = "您需要评议的辅导员有" + "<br>";
 p2.innerHTML = "您正在评议的辅导员是";
 
-window.onload = function() {
+window.onload = function () {
   var xmlhttp1;
   for (var a = 0; a < input.length; a++) {
     input[a].setAttribute("tag", "0");
@@ -25,7 +25,7 @@ window.onload = function() {
     xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-  xmlhttp1.onreadystatechange = function() {
+  xmlhttp1.onreadystatechange = function () {
     if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
       var xml1 = JSON.parse(this.responseText);
       var res = xml1.data;
@@ -39,11 +39,11 @@ window.onload = function() {
           p1.innerHTML = "";
         } else {
           for (var a = 0; a < unfinished.length; a++) {
-            list += "<span>" + "&nbsp" + "&nbsp" + unfinished[a] + "</span>";
+            list += '<span class = "pp1">' + "&nbsp" + "&nbsp" + unfinished[a] + "</em></span>";
           }
           p1.innerHTML = "您需要评议的辅导员有<br>" + list;
         }
-        p2.innerHTML = "您正在评议的辅导员是   &nbsp" + doing;
+        p2.innerHTML = '您正在评议的辅导员是   &nbsp<span class = "pp2">' + doing + "</span></em>";
       } else if (xml1.errorCode == 5) {
         alert("您已完成所有评测！");
         window.location.href = "index.html";
@@ -82,23 +82,21 @@ function request() {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var xml = JSON.parse(xmlhttp.response);
       teacher = xml.teacher;
-      if (xml.errorCode == 0) {
-      } else if (xml.errorCode == 1) {
-      }
+      if (xml.errorCode == 0) {} else if (xml.errorCode == 1) {}
     }
   };
   xmlhttp.open("post", "http://api.com/user/store", true);
   xmlhttp.withCredentials = true;
   xmlhttp.send(data);
-  alert("已完成该辅导员评测！");
+  swal('您已完成该辅导员评测!', '', 'success');
   window.location.href = "index1.html";
 }
 
-btn.onclick = function() {
+btn.onclick = function () {
   if (n <= 10) {
     for (var i = 0; i < input.length; i++) {
       if (input[i].checked == true) {
@@ -149,7 +147,7 @@ btn.onclick = function() {
       }
     }
     if (!cho) {
-      alert("请选择");
+      swal('', '请选择', 'error');
     }
     cho = false;
   }
@@ -173,7 +171,7 @@ function time(a) {
     if (b == 17) {
       a.innerHTML = "提交";
     }
-    setTimeout(function() {
+    setTimeout(function () {
       time(a);
     }, 1000);
   }

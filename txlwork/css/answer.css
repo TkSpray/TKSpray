@@ -38,11 +38,13 @@ html {
 }
 
 .p1 {
-    margin: 0.5rem auto;
+    margin: 0.3rem auto;
+    margin-bottom: -0.5rem;
 }
 
 .head {
     margin: 0 auto;
+    padding-bottom: 1rem;
     border-bottom: solid 1px rgba(114, 114, 114, 0.445);
     margin-bottom: 1rem;
 }
@@ -90,7 +92,7 @@ input:checked+label {
     text-align: center;
 }
 
-button {
+#btn {
     border-radius: 10px;
     background-color: rgba(250, 210, 31);
     border: 1px rgb(71, 71, 71);
@@ -110,7 +112,19 @@ label {
     border: 1px rgb(71, 71, 71);
 }
 
-span {
+.ra {
     display: inline-block;
     margin-top: 0.5rem;
+}
+
+.pp1 {
+    font-size: 1.2rem;
+    color: rgb(53, 118, 222);
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.pp2 {
+    font-size: 1.2rem;
+    color: rgb(53, 118, 222);
 }
