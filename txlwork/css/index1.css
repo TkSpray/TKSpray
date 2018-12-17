@@ -64,7 +64,7 @@ button {
     width: 60%;
     height: 3rem;
     font-size: 17px;
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .text {
@@ -74,4 +74,9 @@ button {
 .pp {
     font-size: 1.2rem;
     color: rgb(244, 106, 23);
+}
+
+.ppp {
+    color: rgb(244, 106, 23);
+    display: inline-block;
 }
