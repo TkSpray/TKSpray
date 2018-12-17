@@ -56,7 +56,7 @@ window.onload = function () {
             }
         }
     };
-    xmlhttp.open('get', 'http://api.com/user/remains', true);
+    xmlhttp.open('get', 'http://120.79.199.124/evaluation/public/user/remains', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
 };

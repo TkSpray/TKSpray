@@ -94,7 +94,7 @@ input:checked+label {
 
 #btn {
     border-radius: 10px;
-    background-color: rgba(250, 210, 31);
+    background-color: rgb(250, 210, 31);
     border: 1px rgb(71, 71, 71);
     width: 70%;
     height: 2.5rem;
@@ -119,12 +119,24 @@ label {
 
 .pp1 {
     font-size: 1.2rem;
-    color: rgb(53, 118, 222);
+    color: rgb(244, 106, 23);
     display: inline-block;
     margin-top: 0.5rem;
 }
 
 .pp2 {
     font-size: 1.2rem;
-    color: rgb(53, 118, 222);
+    color: rgb(244, 106, 23);
+}
+
+.swal-footer {
+    text-align: center !important;
+}
+
+.swal-button {
+    height: 3rem;
+    width: 9rem;
+    font-size: 1.3rem !important;
+    background-color: rgb(250, 210, 31) !important;
+    color: rgb(81, 81, 81);
 }

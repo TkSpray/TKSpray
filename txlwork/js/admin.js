@@ -32,13 +32,13 @@ window.onload = function () {
             }
         }
     };
-    xmlhttp.open('get', 'http://api.com/admin/teachers', true);
+    xmlhttp.open('get', 'http://120.79.199.124/evaluation/public/admin/teachers', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
 };
 
 btn.onclick = function () {
-    window.location.href = "http://api.com/admin/downloads";
+    window.location.href = "http://120.79.199.124/evaluation/public/admin/downloads";
 };
 
 document.addEventListener('click', function (ev) {

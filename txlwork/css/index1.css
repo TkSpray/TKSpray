@@ -59,7 +59,7 @@ span {
 
 button {
     border-radius: 5px;
-    background-color: rgba(254, 206, 80);
+    background-color: rgb(254, 206, 80);
     border: 1px rgb(71, 71, 71);
     width: 60%;
     height: 3rem;
@@ -73,5 +73,5 @@ button {
 
 .pp {
     font-size: 1.2rem;
-    color: rgb(53, 118, 222);
+    color: rgb(244, 106, 23);
 }
