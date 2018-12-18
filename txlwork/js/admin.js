@@ -32,13 +32,13 @@ window.onload = function () {
             }
         }
     };
-    xmlhttp.open('get', 'http://120.79.199.124/evaluation/public/admin/teachers', true);
+    xmlhttp.open('get', 'http://stuhome.uestc.edu.cn/api/v1/counselors/admin/teachers', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
 };
 
 btn.onclick = function () {
-    window.location.href = "http://120.79.199.124/evaluation/public/admin/downloads";
+    window.location.href = "http://stuhome.uestc.edu.cn/api/v1/counselors/admin/downloads";
 };
 
 document.addEventListener('click', function (ev) {

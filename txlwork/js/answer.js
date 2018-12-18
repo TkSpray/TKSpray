@@ -64,7 +64,7 @@ window.onload = function () {
       }
     }
   };
-  xmlhttp1.open("get", "http://120.79.199.124/evaluation/public/user/remains", true);
+  xmlhttp1.open("get", "http://stuhome.uestc.edu.cn/api/v1/counselors/user/remains", true);
   xmlhttp1.withCredentials = true;
   xmlhttp1.send();
 
@@ -89,7 +89,7 @@ function request() {
       if (xml.errorCode == 0) {} else if (xml.errorCode == 1) {}
     }
   };
-  xmlhttp.open("post", "http://120.79.199.124/evaluation/public/user/store", true);
+  xmlhttp.open("post", "http://stuhome.uestc.edu.cn/api/v1/counselors/user/store", true);
   xmlhttp.withCredentials = true;
   xmlhttp.send(data);
   swal('您已完成该辅导员评测!', '', 'success').then(() => {

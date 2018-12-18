@@ -52,12 +52,12 @@ window.onload = function () {
         }
     };
     Name.append('teacher_name', nm);
-    xmlhttp.open('post', 'http://120.79.199.124/evaluation/public/admin/teacher', true);
+    xmlhttp.open('post', 'http://stuhome.uestc.edu.cn/api/v1/counselors/admin/teacher', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send(Name);
 };
 btn.onclick = function () {
-    window.location.href = "http://120.79.199.124/evaluation/public/admin/download?teacher=" + nm;
+    window.location.href = "http://stuhome.uestc.edu.cn/api/v1/counselors/admin/download?teacher=" + nm;
 };
 btn1.onclick = function () {
     window.location.href = "admin.html";

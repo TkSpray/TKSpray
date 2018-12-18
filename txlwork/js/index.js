@@ -54,7 +54,7 @@ function request(username, password1) {
     };
     formdata.append("studentId", studentId);
     formdata.append("password", password);
-    xmlhttp.open("post", "http://120.79.199.124/evaluation/public/user/login", true);
+    xmlhttp.open("post", "http://stuhome.uestc.edu.cn/api/v1/counselors/user/login", true);
     xmlhttp.withCredentials = true;
     xmlhttp.send(formdata);
 }
