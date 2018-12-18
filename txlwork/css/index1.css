@@ -71,7 +71,11 @@ button {
     text-align: left;
 }
 
-.pp {
+.pp1 {
+    color: rgb(244, 106, 23);
+}
+
+.pp2 {
     font-size: 1.2rem;
     color: rgb(244, 106, 23);
 }
