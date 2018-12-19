@@ -9,8 +9,8 @@ var list = "";
 var wait = 1;
 var cho = false;
 var b = 0;
-p1.innerHTML = "您需要评议的辅导员有" + "<br>";
-p2.innerHTML = "您正在评议的辅导员是";
+p1.innerHTML = "您需要评议的辅导员有" + '<span class = "pp1">' + "&nbsp" + "迪丽热巴" + "</em></span>" + '<span class = "pp1">' + "&nbsp" + "迪丽热巴" + "</em></span>" + '<span class = "pp1">' + "&nbsp" + "迪丽热巴" + "</em></span>" + '<span class = "pp1">' + "&nbsp" + "迪丽热巴" + "</em></span>" + "<br>";
+p2.innerHTML = "您正在评议的辅导员是" + '&nbsp<span class = "pp2">' + "迪丽热巴" + "</span></em>";
 
 window.onload = function () {
   var xmlhttp1;
@@ -39,11 +39,11 @@ window.onload = function () {
           p1.innerHTML = "";
         } else {
           for (var a = 0; a < unfinished.length; a++) {
-            list += '<span class = "pp1">' + "&nbsp" + "&nbsp" + unfinished[a] + "</em></span>";
+            list += '<span class = "pp1">' + "&nbsp" + unfinished[a] + "</em></span>";
           }
           p1.innerHTML = "您需要评议的辅导员有<br>" + list;
         }
-        p2.innerHTML = '您正在评议的辅导员是   &nbsp<span class = "pp2">' + doing + "</span></em>";
+        p2.innerHTML = '您正在评议的辅导员是&nbsp<span class = "pp2">' + doing + "</span></em>";
       } else if (xml1.errorCode == 5) {
         alert("您已完成所有评测！");
         window.location.href = "index.html";
@@ -64,7 +64,7 @@ window.onload = function () {
       }
     }
   };
-  xmlhttp1.open("get", "http://stuhome.uestc.edu.cn/api/v1/counselors/user/remains", true);
+  xmlhttp1.open("get", "http://120.79.199.124/evaluation/public/user/remains", true);
   xmlhttp1.withCredentials = true;
   xmlhttp1.send();
 
@@ -89,7 +89,7 @@ function request() {
       if (xml.errorCode == 0) {} else if (xml.errorCode == 1) {}
     }
   };
-  xmlhttp.open("post", "http://stuhome.uestc.edu.cn/api/v1/counselors/user/store", true);
+  xmlhttp.open("post", "http://120.79.199.124/evaluation/public/user/store", true);
   xmlhttp.withCredentials = true;
   xmlhttp.send(data);
   swal('您已完成该辅导员评测!', '', 'success').then(() => {
@@ -138,7 +138,6 @@ btn.onclick = function () {
             que.innerHTML = "10/10.总体评价";
             break;
           case 11:
-            console.log(data);
             request();
             break;
         }
@@ -160,7 +159,6 @@ function time(a) {
     a.innerHTML = "下一题";
     wait = 1;
     b++;
-    console.log(b);
     if (b == 18) {
       a.innerHTML = "提交";
     }

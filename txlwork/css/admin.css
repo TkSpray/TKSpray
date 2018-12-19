@@ -24,12 +24,20 @@ a {
     text-indent: 2rem;
 }
 
-button {
+#btn {
     position: absolute;
     background-color: rgba(255, 224, 166, 0.822);
     border: none;
     height: 30px;
     right: 0;
+}
+
+#btn1 {
+    position: absolute;
+    background-color: rgba(255, 224, 166, 0.822);
+    border: none;
+    height: 30px;
+    left: 0;
 }
 
 .sec2 {

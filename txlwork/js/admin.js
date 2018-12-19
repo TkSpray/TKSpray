@@ -2,6 +2,7 @@ var list = '';
 var a = [1, 2, 3, 4];
 var div = document.getElementsByClassName('sec2');
 var btn = document.getElementById('btn');
+var btn1 = document.getElementById('btn1');
 
 window.onload = function () {
     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -32,13 +33,26 @@ window.onload = function () {
             }
         }
     };
-    xmlhttp.open('get', 'http://stuhome.uestc.edu.cn/api/v1/counselors/admin/teachers', true);
+    xmlhttp.open('get', 'http://120.79.199.124/evaluation/public/admin/teachers', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
 };
 
 btn.onclick = function () {
-    window.location.href = "http://stuhome.uestc.edu.cn/api/v1/counselors/admin/downloads";
+    window.location.href = "http://120.79.199.124/evaluation/public/admin/downloads";
+};
+
+btn1.onclick = function () {
+    var xmlhttp2;
+    xmlhttp2 = new XMLHttpRequest();
+    xmlhttp2.onreadystatechange = function () {
+        if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+            window.location.href = "index.html";
+        }
+    };
+    xmlhttp2.open('get', 'http://120.79.199.124/evaluation/public/user/logout', true);
+    xmlhttp2.withCredentials = true;
+    xmlhttp2.send();
 };
 
 document.addEventListener('click', function (ev) {

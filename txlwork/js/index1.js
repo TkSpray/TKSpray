@@ -26,7 +26,16 @@ window.onload = function () {
                 btn.innerHTML = '返回';
                 p.innerHTML = '您已经完成了所有的测评<br>感谢您的参与！';
                 btn.onclick = function () {
-                    window.location.href = "index.html";
+                    var xmlhttp2;
+                    xmlhttp2 = new XMLHttpRequest();
+                    xmlhttp2.onreadystatechange = function () {
+                        if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+                            window.location.href = "index.html";
+                        }
+                    };
+                    xmlhttp2.open('get', 'http://120.79.199.124/evaluation/public/user/logout', true);
+                    xmlhttp2.withCredentials = true;
+                    xmlhttp2.send();
                 };
             } else if (xml.errorCode == 0 || xml.errorCode == 1 || xml.errorCode == 4) {
 
@@ -45,7 +54,16 @@ window.onload = function () {
             } else if (xml.errorCode == 2 || xml.errorCode == 3 || xml.errorCode == 6) {
                 alert('登录失败');
                 btn.onclick = function () {
-                    window.location.href = "index.html";
+                    var xmlhttp2;
+                    xmlhttp2 = new XMLHttpRequest();
+                    xmlhttp2.onreadystatechange = function () {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            window.location.href = "index.html";
+                        }
+                    };
+                    xmlhttp2.open('get', 'http://120.79.199.124/evaluation/public/user/logout', true);
+                    xmlhttp2.withCredentials = true;
+                    xmlhttp2.send();
                 };
             } else if (xml.errorCode == 8) {
                 alert('非法操作，权限不够');
@@ -56,7 +74,7 @@ window.onload = function () {
             }
         }
     };
-    xmlhttp.open('get', 'http://stuhome.uestc.edu.cn/api/v1/counselors/user/remains', true);
+    xmlhttp.open('get', 'http://120.79.199.124/evaluation/public/user/remains', true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
 };
