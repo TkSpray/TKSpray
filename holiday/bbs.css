@@ -38,14 +38,14 @@ em {
 
 .banner {
   width: 100%;
-  background: url(bbs/a.gif) 0 -40px repeat-x;
+  background: url(bbs/a.png) 0 -40px repeat-x;
   height: 35px;
   color: #fff;
 }
 
 .left {
   font-size: 14px;
-  background: url(bbs/a.gif) no-repeat;
+  background: url(bbs/a.png) no-repeat;
   line-height: 35px;
   width: 90px;
   text-align: center;
