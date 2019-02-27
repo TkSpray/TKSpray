@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(242, 255, 255);
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 13px;
+  display: inline;
+}
+
+img {
+  width: 56px;
+  height: 56px;
+  float: left;
+}
+
+em {
+  font-size: 12px;
+  color: #F26C4F;
+  font-style: normal;
+}
+
+.all {
+  width: auto;
+  min-width: 980px;
+}
+
+.banner {
+  width: 100%;
+  background: url(bbs/a.gif) 0 -40px repeat-x;
+  height: 35px;
+  color: #fff;
+}
+
+.left {
+  font-size: 14px;
+  background: url(bbs/a.gif) no-repeat;
+  line-height: 35px;
+  width: 90px;
+  text-align: center;
+  padding-left: 3px;
+  display: inline-block;
+}
+
+.center {
+  float: right;
+  background: url(bbs/b.gif) no-repeat;
+  width: 30px;
+  height: 35px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.right {
+  float: right;
+  line-height: 35px;
+  padding-top: 5px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 1rem;
+  border-bottom-style: dashed;
+  border-bottom-color: rgb(205, 205, 205);
+  border-bottom-width: 1px;
+}
+
+.part {
+  height: 56px;
+  width: 32.9%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2px;
+  padding-left: 4px;
+}

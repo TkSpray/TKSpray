@@ -1,3 +1,1 @@
-print('hello')
-
-print('hello,world')
+#coding=utf-8
