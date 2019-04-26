@@ -1,0 +1,98 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 16px;
+    height: 100%;
+}
+
+.all {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(128, 128, 128, 0.6);
+    height: inherit;
+}
+
+.all1 {
+    max-width: 550px;
+    background-color: white;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: inherit;
+    background-image: url("bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding-top: 5rem;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 90%;
+    margin: 0 auto;
+    height: 17rem;
+    border-radius: 10px;
+
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 350;
+    color: rgb(81, 81, 81);
+    margin: 0 auto;
+    margin-bottom: -1.5rem;
+}
+
+.head {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 20px;
+}
+
+.item1 {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.item2 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+input {
+    height: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 25px;
+    border: 1px;
+    border-bottom: 1px solid rgb(171, 171, 171);
+    background-color: inherit;
+    font-size: 1rem;
+}
+
+button {
+    border-radius: 10px;
+    background-color: rgb(254, 205, 80);
+    border: 1px rgb(71, 71, 71);
+    width: 60%;
+    height: 2.2rem;
+    font-size: 17px;
+}
+
+#inform {
+    text-align: center;
+    color: red;
+}
+
+.foot {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 6rem;
+}
