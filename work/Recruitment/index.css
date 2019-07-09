@@ -1,0 +1,251 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url(photo/back.png);
+    width: 90%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+@media (min-width:751px) {
+
+    .main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+
+    .part1 {
+        width: 48%;
+        text-align: center;
+        margin-top: -9%;
+        margin-left: -9%;
+    }
+
+    .logo {
+        width: 70%;
+        opacity: 0.9;
+        display: inline-block;
+    }
+
+    .p1 {
+        width: 50%;
+        margin: 1.3rem auto;
+    }
+
+    .p2 {
+        font-family: PingFangSC-Semibold;
+        font-size: 2rem;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 2.1px;
+        color: #ffffff;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .part2 {
+        width: 30%;
+        height: 65%;
+        background-color: black;
+        text-align: center;
+        margin-left: -15%;
+        min-width: 325px;
+    }
+
+    .opion {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.2rem;
+        padding: 0;
+        width: 80%;
+        margin: 1.2rem auto;
+    }
+
+    .button1 {
+        background-color: inherit;
+        border: 0;
+        color: #ffffff;
+        font-size: 20px;
+        border-bottom: solid 2px #cfcfcf;
+    }
+
+    .button2 {
+        background-color: inherit;
+        border: 0;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 20px;
+    }
+
+    .act {
+        height: 45%;
+        padding-top: 17%;
+    }
+
+    .hide {
+        height: 45%;
+        padding-bottom: 17%;
+        display: none;
+    }
+
+    .input1 {
+        height: 1rem;
+        width: 80%;
+        margin: 1rem auto;
+        margin-bottom: 0;
+        border: 1px;
+        border-bottom: 1px solid rgb(171, 171, 171);
+        background-color: inherit;
+        font-size: 1rem;
+        font-family: PingFangSC-Light;
+        padding-bottom: 0.5rem;
+        color: #ffffff;
+        padding-left: 0.5rem;
+    }
+
+    .button {
+        border: solid 3px rgba(255, 255, 255, 0.8);
+        width: 80%;
+        height: 2.5rem;
+        font-family: PingFangSC-Regular;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #ffffff;
+        background-color: inherit;
+        margin-top: 2.3rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:750px) {
+    .main {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        height: inherit;
+    }
+
+    .part1 {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 12%;
+    }
+
+    .logo {
+        width: 90%;
+        opacity: 0.9;
+        display: inline-block;
+    }
+
+    .p1 {
+        width: 70%;
+        margin: 0.5rem auto;
+    }
+
+    .p2 {
+        font-family: PingFangSC-Semibold;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 4px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .part2 {
+        width: 80%;
+        height: 37%;
+        background-color: black;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 10%;
+    }
+
+    .opion {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.2rem;
+        padding: 0;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .button1 {
+        background-color: inherit;
+        border: 0;
+        color: #ffffff;
+        border-bottom: solid 2px #cfcfcf;
+    }
+
+    .button2 {
+        background-color: inherit;
+        border: 0;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .ul1 {
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.8rem;
+        padding: 0 0;
+        width: 80%;
+        margin: 5px auto;
+    }
+
+    .act {
+        height: 60%;
+        padding-top: 2rem;
+    }
+
+    .hide {
+        height: 60%;
+        padding-bottom: 2rem;
+        display: none;
+    }
+
+    .input1 {
+        height: 0.7rem;
+        width: 75%;
+        margin: 0.6rem auto;
+        margin-bottom: 0;
+        border: 1px;
+        border-bottom: 1px solid rgb(171, 171, 171);
+        background-color: inherit;
+        font-size: 0.8rem;
+        font-family: PingFangSC-Light;
+        padding-bottom: 0.4rem;
+        color: #ffffff;
+        padding-left: 0.2rem;
+
+    }
+
+    .button {
+        border: solid 2px rgba(255, 255, 255, 0.8);
+        width: 75%;
+        height: 2rem;
+        font-family: PingFangSC-Regular;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #ffffff;
+        background-color: inherit;
+        font-size: 0.8rem;
+    }
+}

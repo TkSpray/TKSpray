@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="answer.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"> </script>
+</head>
+
+<body>
+    <div class="bar">
+        <div class="left"><img src="photo/LOGO.png"></div>
+        <div class="middle">
+            <h2>前端组答题</h2>
+        </div>
+        <div class="right">
+            <embed src="photo/icon.svg">
+            <img src="photo/route.png" v-bind:class="[{rotate:1},{rotate1:0}]">
+        </div>
+    </div>
+    <script src="answer.js"></script>
+</body>
+
+</html>
