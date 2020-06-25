@@ -1,0 +1,51 @@
+{
+  "name": "kase",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "eslint --fix src/**.js"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^3.0.1",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "element-ui": "^2.12.0",
+    "jquery": "^3.4.0",
+    "jszip": "^3.2.2",
+    "popper.js": "^1.15.0",
+    "qs": "^6.9.0",
+    "tinymce": "^5.0.15",
+    "vue": "^2.6.10",
+    "vue-async-computed": "^3.7.0",
+    "vue-axios": "^2.1.4",
+    "vue-router": "^3.0.6",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-service": "^3.8.0",
+    "assign-deep": "^1.0.1",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^5.2.3",
+    "standard": "^14.1.0",
+    "vue-eslint-parser": "^6.0.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

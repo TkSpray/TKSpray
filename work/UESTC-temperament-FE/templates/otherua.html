@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>成电气质-请用微信客户端打开</title>
+  <link rel="stylesheet" href="../src/css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:900" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bg">
+    <div class="other-wrap otherua-page" style="height: 90%;">
+      <div class="other-topwrap">
+        <h1 class="uestc-logo"></h1>
+      </div>
+      <div class="otherwrap">
+        <img src="../src/images/login/font.png" class="fontimg">
+      </div>
+      <!-- <h2 class="tac">2019成电气质</h2> -->
+      <form class="login-form tac">
+        <div class="ins-det pr mgt2">
+          <i class="ins-linet"></i>
+          <p class="indes-tit tac">本活动仅在微信中参加</p>
+          <p class="mgt2">请点击浏览器的分享功能</br>并分享到微信中以便打开</p>
+          <i class="ins-lineb"></i>
+        </div>
+        <!-- <button class="btn login-btn" id="wxjp-btn">打开微信</button> -->
+      </form>
+    </div>
+    <div class="otherua-sign">
+      <p class="xc-cr pa tac rj">电子科技大学大学生网络文化工作室联盟<br>“软件e声”大学生网络文化工作室</p>
+      <p class="xc-cr pa tac">Copyright&copy;1998-2019 StarStudio. All Rights Reserved</p>
+    </div>
+  </div>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../src/js/index.js"></script>
+  <script>
+    var mo = function (e) {
+      e.preventDefault();
+    };
+
+    function stop() {
+      document.body.style.overflow = 'hidden';
+      document.addEventListener("touchmove", mo, {
+        passive: false
+      }); //禁止页面滑动
+    }
+    //直接默认不让滑动
+    stop();
+  </script>
+</body>
+
+</html>

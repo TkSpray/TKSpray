@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="../lib/echarts.min.js"></script>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script src="../lib/html2canvas.js"></script>
+  <meta charset="UTF-8" />
+  <title>成电气质-长按页面保存并分享</title>
+  <link rel="stylesheet" href="../src/css/index.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:900" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="whitewrap">
+    <div class="inner">
+      <div class="load-container load8">
+        <div class="loader"></div>
+        <span
+          style="font-size: 40px;margin: 0 auto;width: 100%;display: block;text-align: center;margin-top: 60px;">正在生成...</span>
+      </div>
+      <img src="../src/images/res-font1.png" class="res-fontimg waitimg">
+    </div>
+  </div>
+  <div class="res-bg result-page pr">
+    <div class="res-head">
+      <div class="headwrap">
+        <div class="headlogo">
+          <img class="res-headimg" crossorigin="anonymous" />
+        </div>
+        <span class="res-username">用户名</span>
+      </div>
+      <div class="random-head">
+        <div id="slogan-wrap"></div>
+      </div>
+      <img src="../src/images/res-font1.png" class="res-fontimg" />
+    </div>
+    <div class="outwrap">
+      <div class="wrap">
+        <img class="radar-bg" />
+        <div id="resultimg"></div>
+      </div>
+    </div>
+    <div class="result-sign">
+      <div class="frontfoot">
+        <span>微信扫描二维码<br />测试专属于你的<br />成电气质</span>
+      </div>
+      <img src="../src/images/QR1.png" class="foot-img" />
+      <div class="footwrap">
+        <span class="finfooter">电子科技大学大学生网络文化工作室联盟
+          <br />
+          <span>“软件e声”大学生网络文化工作室 <br /></span>
+          本活动最终解释权归“软件e声”大学生网络文化工作室所有
+          <br /><span>
+            Copyright&copy;2019 StarStudio All Rights Reserved</span>
+        </span>
+      </div>
+    </div>
+    <div id="main" class="radarwrap "></div>
+    <img class="seal" />
+  </div>
+</body>
+<script type="text/javascript" src="../src/js/index.js"></script>
+<script type="text/javascript" src="../src/js/result.js"></script>
+
+</html>
