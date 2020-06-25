@@ -16,7 +16,7 @@
     "jszip": "^3.2.2",
     "popper.js": "^1.15.0",
     "qs": "^6.9.0",
-    "tinymce": "^5.0.15",
+    "tinymce": "^5.2.2",
     "vue": "^2.6.10",
     "vue-async-computed": "^3.7.0",
     "vue-axios": "^2.1.4",
