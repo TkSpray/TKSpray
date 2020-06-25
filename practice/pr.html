@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>通过简单的删除功能来理解父组件与子组件之间的数据传递</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<style type="text/css">
+    button {
+        font-size: 14px;
+        background: skyblue;
+        border: 1px solid skyblue;
+        width: 100px;
+        height: 30px;
+        border-radius: 4px;
+
+    }
+</style>
+
+
+
+<body>
+
+    <!--实现效果点击li删除-->
+    <div id="root">
+        <input type="text" v-model="msg" />
+        <button @click="add">添加</button>
+        <ul>
+            <itme-cell v-for="(item,index) of list" :key="index" :index="index" :content="item" @delete="handle">
+            </itme-cell>
+        </ul>
+    </div>
+    <script>
+        // 一般的删除思路：点击li,找到当前li的父级ul，进行删除；
+
+        // 该组件是子组件
+        Vue.component('itme-cell', {
+            props: ['content', 'index'], // 接受父组件传递过来的索引index
+            template: '<li @click="deleteLi">{{content}}</li>', // 我们先给li绑定删除事件
+            methods: { // 当li被点击时，会触发deleteLi
+                deleteLi: function () {
+                    //      alert(this.index);
+                    this.$emit('delete', this
+                        .index); // 此处表示向外触发删除事件，即父组件中的delete事件，并同时把索引传递给父组件。从而让父组件去执行handle 的方法;
+
+                }
+
+            }
+
+        });
+
+        // 最外层的vue实例是父组件
+        new Vue({
+            el: '#root',
+            data: {
+                msg: "",
+                list: []
+
+            },
+            methods: {
+                add: function () { // 当添加按钮别点击时会触发该add方法
+                    this.list.push(this
+                        .msg
+                        ); // 因为input值与实例中data的msg变量进行了双向绑定，所以此处的意思就是：只要点击添加按钮，就会获取input中的值，并把这个值添加到list数组中。然后现在是list数据已经存在了，就在模板中调用v-for对数据进行循环加载即可
+                    this.msg = ""; // 每次添加完成都会清空下input中的值
+
+                },
+                handle: function () {
+                    // 把数据移除注意此处一定要是this.index,否则会报错 ..index not defined..   
+                    this.list.splice(this.index, 1); // splice(索引，要移除的个数)； 
+                    //我自己写的时候其实是有疑问的，一般的开发我们删除数据之后还要把当前的dom也在页面中移除掉。但是为什么此处不用呢？我现在只知道这个方法是vue更改后的，如果调用删除数组元素的方法vue就会自动更新视图，这块我还是不清楚，有知道望解惑下！
+
+                }
+
+            }
+
+        });
+    </script>
+</body>
+
+
+
+</html>

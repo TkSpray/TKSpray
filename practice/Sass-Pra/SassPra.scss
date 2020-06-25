@@ -1,0 +1,19 @@
+$link-color: blue;
+$fontsize:20px;
+
+html {
+  background-color: $link-color;
+
+  a {
+    color: $link-color;
+  }
+}
+
+@mixin divwrap {
+  font-size: $fontsize;
+}
+
+div {
+  @include divwrap;
+  @import "SassOth.scss";
+}

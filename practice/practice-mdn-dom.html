@@ -1,68 +1,58 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Shopping list example</title>
-    <style>
-        li {
-        margin-bottom: 10px;
-      }
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
-
 <body>
-
-    <h1>My shopping list</h1>
-
-    <div>
-        <label for="item">Enter a new item:</label>
-        <input type="text" name="item" id="item">
-        <button>Add item</button>
+    <div id="app">
+        <router-link to="/user/张三">张三</router-link>
+        <router-link to="/user/李四">李四</router-link>
+        <router-view></router-view>
     </div>
-
-    <ul>
-
-    </ul>
-
+    
     <script>
-        var list = document.querySelector('ul'),
-            ipt = document.querySelector('input'),
-            btn = document.querySelector('button');
-        btn.onclick = function () {
-            var add = ipt.value;
-            ipt.value = '';
-            var li_ = document.createElement('li');
-            var span_ = document.createElement('span');
-            var bton = document.createElement('button');
-            li_.appendChild(span_);
-            li_.appendChild(bton);
-            span_.textContent = add;
-            bton.textContent = 'Delete';
-            list.appendChild(li_);
-            bton.onclick = function () {
-                list.removeChild(li_);
-            }
-            ipt.focus();
+        var user = {
+            template: `
+                <div>
+                    <div>我叫{{$route.params.name}}</div>
+                    <router-link to="more" append>更多信息</router-link>
+                    <router-view></router-view>
+                </div>
+            `,
         }
-        /* 
-        1.首先，下载shopping-list.html文件，并存入本地。你会看到它有一些极小的CSS，一个带有label、input和button的list和一个空的list以及<script> 元素。要添加的所有程序都在script里面。
-        2.创建三个变量来保存list(<ul>)、<input>和<button>元素的引用。
-        3.创建一个函数响应点击按钮。
-        4.在函数体内，开始要在一个变量中存储输入框的当前值。
-        5.然后，为输入框元素设置空字符 - ''使其为空
-        6.创建三个新元素 — 一个list项（<li>），<span>和 <button>，并把它们存入变量之中。
-        7.把span和button作为list项的子节点。
-        8.把之前保存的输入框元素的值设置为span的文本内容，按钮的文本内容设置为'Delete'
-        9.把list项设置为list的子节点。
-        10.为删除按钮绑定事件处理程序。当点击按钮时，删除它所在的整个list项。
-        11.最后，使用focus()方法聚焦输入框准备输入下一个购物项。 */
+        var more = {
+            template: `
+                <div>
+                    <p>用户{{$route.params.name}}详细信息</p>
+                    <p>aaaaaaaaaaaaaaaaa</p>
+                </div>
+            `,
+        }
+        var routes = [
+            {
+                path: '/user/:name',
+                component: user,
+                children: [
+                    {
+                        path: 'more',
+                        component: more
+                    }
+                ]
+            }
+        ];
+        var router = new VueRouter({
+            routes: routes
+        });
+        // 4. 创建根实例
+        var vm = new Vue({
+            el: '#app',
+            router: router,
+        })
     </script>
 </body>
-
 </html>

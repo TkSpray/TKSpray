@@ -1,0 +1,17 @@
+html {
+  background-color: blue;
+}
+
+html a {
+  color: blue;
+}
+
+div {
+  font-size: 20px;
+}
+
+div img {
+  width: 500px;
+  height: 500px;
+  display: block;
+}
